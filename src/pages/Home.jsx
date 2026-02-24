@@ -19,6 +19,13 @@ export default function Home() {
                 <p className="hero-statement">
                     I break things to understand how they work, then I build better defenses.
                     Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures.
+
+                    If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
+                    Feel free to look around and see what I've been working on.
+
+                    I don't disclose my name or identity publicly, but I embedded a PGP key in my resume's metadata that you can use
+                    to verify my identity. See my PGP key authentication walk through and my steganography project for more info.
+
                 </p>
 
                 <div className="focus-areas">
