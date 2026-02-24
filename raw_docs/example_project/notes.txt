@@ -1,0 +1,1 @@
+Goal: Setup an active directory lab. Features: Configured 3 domains, handled trust relationships.
