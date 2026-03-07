@@ -18,7 +18,7 @@ export default function Home() {
                 </h1>
                 <p className="hero-statement">
                     I break things to understand how they work, then I build better defenses.
-                    Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures.
+                    Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures. /n
 
                     If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
                     Feel free to look around and see what I've been working on.

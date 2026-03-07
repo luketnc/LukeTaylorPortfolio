@@ -1,5 +1,30 @@
 export const projectsData = [
     {
+        id: "pwnagotchi-cookbook",
+        slug: "pwnagotchi-cookbook",
+        title: "Pwnagotchi Cookbook",
+        oneLiner: "A somewhat recent guide to building and configuring a pwnagotchi",
+        category: "Tooling",
+        tags: ["Go", "Hardware", "Wifi"],
+        status: "Archived",
+        featured: true,
+        overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",
+        goal: "To understand the basics of sniffing handshakes and configuring a pi zero w",
+        features: [
+            "Soldering of a pi zero w",
+            "Configuring pwnagotchi OS",
+            "Troubleshooting bugs and glitches"
+        ],
+        techStack: ["Bash", "WPA2", "TCP/IP"],
+        results: "Got a pwnagotchi to sniff handshakes and function on a semi supported screen",
+        lessons: "Troubleshooting hardware and software issues simultaneously is a pain and requires a lot of patience. Also, the pi zero w is a solid platform for small projects.",
+        links: {
+            repo: "https://github.com",
+            demo: "",
+            writeup: ""
+        }
+    },
+    {
         id: "vuln-scanner-go",
         slug: "vuln-scanner-go",
         title: "Concurrent Vuln Scanner",
