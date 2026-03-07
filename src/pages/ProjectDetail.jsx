@@ -1,6 +1,9 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { projectsData } from '../data/mockData';
 import { Github, ExternalLink, FileText, ArrowLeft } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 export default function ProjectDetail() {
     const { slug } = useParams();
@@ -53,43 +56,56 @@ export default function ProjectDetail() {
             </header>
 
             <div className="project-content">
-                <section className="project-section">
-                    <h2>Overview</h2>
-                    <p>{project.overview}</p>
-                </section>
-
-                <section className="project-section">
-                    <h2>Goal / Problem</h2>
-                    <p>{project.goal}</p>
-                </section>
-
-                <section className="project-section">
-                    <h2>What was Built</h2>
-                    <ul>
-                        {project.features.map(feature => (
-                            <li key={feature}>{feature}</li>
-                        ))}
-                    </ul>
-                </section>
-
-                <section className="project-section">
-                    <h2>Tech Stack</h2>
-                    <div className="project-tags">
-                        {project.techStack.map(tech => (
-                            <span key={tech} className="tag">{tech}</span>
-                        ))}
+                {project.content ? (
+                    <div className="markdown-body">
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeRaw]}
+                        >
+                            {project.content}
+                        </ReactMarkdown>
                     </div>
-                </section>
+                ) : (
+                    <>
+                        <section className="project-section">
+                            <h2>Overview</h2>
+                            <p>{project.overview}</p>
+                        </section>
 
-                <section className="project-section">
-                    <h2>Results & Outcomes</h2>
-                    <p>{project.results}</p>
-                </section>
+                        <section className="project-section">
+                            <h2>Goal / Problem</h2>
+                            <p>{project.goal}</p>
+                        </section>
 
-                <section className="project-section">
-                    <h2>Lessons & Tradeoffs</h2>
-                    <p>{project.lessons}</p>
-                </section>
+                        <section className="project-section">
+                            <h2>What was Built</h2>
+                            <ul>
+                                {project.features?.map(feature => (
+                                    <li key={feature}>{feature}</li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section className="project-section">
+                            <h2>Tech Stack</h2>
+                            <div className="project-tags">
+                                {project.techStack?.map(tech => (
+                                    <span key={tech} className="tag">{tech}</span>
+                                ))}
+                            </div>
+                        </section>
+
+                        <section className="project-section">
+                            <h2>Results & Outcomes</h2>
+                            <p>{project.results}</p>
+                        </section>
+
+                        <section className="project-section">
+                            <h2>Lessons & Tradeoffs</h2>
+                            <p>{project.lessons}</p>
+                        </section>
+                    </>
+                )}
             </div>
         </div>
     );
