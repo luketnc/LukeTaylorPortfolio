@@ -16,17 +16,20 @@ export default function Home() {
                     Security engineer in the making. <br />
                     <span className="text-muted">Building practical labs and tools.</span>
                 </h1>
-                <p className="hero-statement">
-                    I break things to understand how they work, then I build better defenses.
-                    Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures. /n
-
-                    If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
-                    Feel free to look around and see what I've been working on.
-
-                    I don't disclose my name or identity publicly, but I embedded a PGP key in my resume's metadata that you can use
-                    to verify my identity. See my PGP key authentication walk through and my steganography project for more info.
-
-                </p>
+                <div className="hero-statement">
+                    <p>
+                        I break things to understand how they work, then I build better defenses.
+                        Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures.
+                    </p>
+                    <p>
+                        If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
+                        Feel free to look around and see what I've been working on.
+                    </p>
+                    <p>
+                        I don't disclose my name or identity publicly, but I cryptographically sign my work. My resume contains a fingerprint that you can use
+                        to verify my identity. See my <Link to="/projects/siteproof" className="text-primary">PGP Verification</Link> project for my public key and verification instructions.
+                    </p>
+                </div>
 
                 <div className="focus-areas">
                     <div className="focus-item">
