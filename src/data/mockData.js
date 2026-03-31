@@ -421,28 +421,34 @@ export const projectsData = [
     ...pgpKey
 ];
 
-export const updatesData = [
+export const blogData = [
     {
-        id: "update-1",
+        id: "post-1",
+        slug: "finished-go-vuln-scanner",
         date: "2026-02-20",
         title: "Finished Go Vuln Scanner MVP",
-        body: "Finally got the concurrent scanning working without race conditions. Go channels are incredibly powerful once you understand the mental model. Next step: writing tests.",
+        excerpt: "Finally got the concurrent scanning working without race conditions. Go channels are incredibly powerful once you understand the mental model.",
+        content: `Finally got the concurrent scanning working without race conditions. Go channels are incredibly powerful once you understand the mental model. Next step: writing tests.\n\n## The Problem\nWhen dealing with scaling out network sweeps, waiting on blocking IO sequentially is brutal.\n\n### The Solution\nUsing standard Go primitives like WaitGroups and Channels allows for effortless concurrent executions without race-condition panics... if you do it right. Here is a sample metric:\n- Sequential: 120s\n- Concurrent (10 workers): 14s\n\nNot bad for a weekend project.`,
         tags: ["Go", "Milestone"],
         relatedProjectSlug: "vuln-scanner-go"
     },
     {
-        id: "update-2",
+        id: "post-2",
+        slug: "starting-zero-trust-lab",
         date: "2026-02-10",
         title: "Starting the Zero-Trust Lab",
-        body: "Just planned out the architecture for the Zero-Trust Auth lab. Will be using Terraform to make it easily reproducible. Planning to focus heavily on AWS IAM permissions boundaries.",
+        excerpt: "Just planned out the architecture for the Zero-Trust Auth lab. Will be using Terraform.",
+        content: `Just planned out the architecture for the Zero-Trust Auth lab. Will be using Terraform to make it easily reproducible. Planning to focus heavily on AWS IAM permissions boundaries.\n\nI want to simulate 3 distinct attack paths:\n1. SSRF to Instance Metadata\n2. Over-permissive S3 Bucket Policy\n3. Token theft via compromised local machine\n\nI'll be publishing the IAC scripts soon.`,
         tags: ["Planning", "Cloud"],
         relatedProjectSlug: "auth-lab-infra"
     },
     {
-        id: "update-3",
+        id: "post-3",
+        slug: "site-redesign-react",
         date: "2026-01-15",
         title: "Site Redesign",
-        body: "Ported my old HTML blog over to a React SPA. Needed something cleaner that reflected my focus better. Decided to go with a dark 'security' aesthetic.",
+        excerpt: "Ported my old HTML blog over to a React SPA. Needed something cleaner.",
+        content: `Ported my old HTML blog over to a React SPA. Needed something cleaner that reflected my focus better. Decided to go with a dark 'security' aesthetic, avoiding traditional web-dev frameworks that pull in unnecessary bloated defaults. Still looking into ways to minimize javascript bundle sizes for pure-text pages.`,
         tags: ["Meta"],
         relatedProjectSlug: null
     }

@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="footer-links">
                         {/* Keeping it pseudonymous as requested */}
                         <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="/updates">RSS/Updates</a>
+                        <a href="/blog">RSS/Blog</a>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
-import { projectsData, updatesData } from '../data/mockData';
+import { projectsData, blogData } from '../data/mockData';
 import ProjectCard from '../components/ProjectCard';
-import UpdateItem from '../components/UpdateItem';
+import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
 import { Key, Server, Terminal, ArrowRight } from 'lucide-react';
 
 export default function Home() {
     const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3);
-    const latestUpdate = updatesData[0];
+    const latestPost = blogData[0];
 
     return (
         <div className="home-page">
@@ -66,14 +66,14 @@ export default function Home() {
 
             {/* Latest Update */}
             {
-                latestUpdate && (
+                latestPost && (
                     <section className="latest-update-section container section-padding">
                         <div className="section-header">
-                            <h2>Latest Update</h2>
-                            <Link to="/updates" className="view-all-link">All Updates →</Link>
+                            <h2>Latest Post</h2>
+                            <Link to="/blog" className="view-all-link">All Posts →</Link>
                         </div>
                         <div className="latest-update-card">
-                            <UpdateItem update={latestUpdate} />
+                            <BlogPreview post={latestPost} />
                         </div>
                     </section>
                 )

@@ -1,25 +1,6 @@
-import { Mail, Github, Twitter, Send } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, MessageCircle, Wallet } from 'lucide-react';
 
 export default function Contact() {
-    const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success, error
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormStatus('submitting');
-
-        // Simulate submission safely
-        setTimeout(() => {
-            setFormStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-        }, 1000);
-    };
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
     return (
         <div className="contact-page container section-padding">
             <header className="page-header">
@@ -27,78 +8,33 @@ export default function Contact() {
                 <p className="page-subtitle">Got a question or want to collaborate? Reach out securely.</p>
             </header>
 
-            <div className="contact-grid">
-                <div className="contact-info">
+            <div className="contact-content" style={{ maxWidth: '600px' }}>
+                <div className="contact-info" style={{ marginBottom: '3rem' }}>
                     <h2>Connect</h2>
                     <p className="contact-desc">
                         I'm generally open to discussing security topics, reviewing labs, or collaborating on open-source tooling.
                     </p>
                     <div className="social-links">
-                        {/* Pseudonymous links */}
-                        <a href="mailto:hello@nullgarden.local" className="social-link">
-                            <Mail size={20} /> hello@nullgarden.local
+                        <a href="mailto:nullgarden@proton.me" className="social-link">
+                            <Mail size={20} /> nullgarden@proton.me
                         </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <Github size={20} /> @nullgardenBuilder
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <Twitter size={20} /> @nullgardenSec
+                        <a href="https://t.me/nullgarden" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <MessageCircle size={20} /> @nullgarden
                         </a>
                     </div>
                 </div>
 
-                <div className="contact-form-wrapper">
-                    <h2>Secure Message</h2>
-                    {formStatus === 'success' ? (
-                        <div className="form-success">
-                            <p>Message sent successfully. I'll get back to you soon.</p>
-                            <button className="btn btn-secondary" onClick={() => setFormStatus('idle')}>Send Another</button>
-                        </div>
-                    ) : (
-                        <form className="contact-form" onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="name">Name / Alias</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="message">Message</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="5"
-                                    required
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="btn btn-primary"
-                                disabled={formStatus === 'submitting'}
-                            >
-                                {formStatus === 'submitting' ? 'Sending...' : <><Send size={16} /> Send Message</>}
-                            </button>
-                            <p className="form-note">Data is processed purely client-side in this demo frontend.</p>
-                        </form>
-                    )}
+                <div className="support-info">
+                    <h2>Support</h2>
+                    <p className="contact-desc">
+                        If you found my writeups helpful or use my open-source tools, consider sending a small tip. Monero (XMR) is strongly preferred to maintain privacy.
+                    </p>
+                    <div className="social-link" style={{ cursor: 'text', wordBreak: 'break-all', alignItems: 'flex-start', padding: '1.5rem', background: 'var(--surface-hover)', border: '1px dashed var(--border-color)' }}>
+                        <Wallet size={24} style={{ flexShrink: 0, marginTop: '2px', color: 'var(--accent-color)' }} /> 
+                        <span style={{ fontSize: '0.9rem', fontFamily: 'var(--font-mono)' }}>
+                            4AMEv9uedBiTcnejLp5yzE9oUaJ97E4nZZTa4iHZaj5k1iBTUz9YWvpCoipk97h6d35tNXDiXNbDEcpYzUaEebm2DffZeyN
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,8 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import ProjectsIndex from './pages/ProjectsIndex';
 import ProjectDetail from './pages/ProjectDetail';
-import Updates from './pages/Updates';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Coin from './pages/Coin';
 import Contact from './pages/Contact';
 
@@ -16,7 +17,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="projects" element={<ProjectsIndex />} />
           <Route path="projects/:slug" element={<ProjectDetail />} />
-          <Route path="updates" element={<Updates />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="coin" element={<Coin />} />
           <Route path="contact" element={<Contact />} />
         </Route>

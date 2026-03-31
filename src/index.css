@@ -614,21 +614,158 @@ button {
   color: var(--text-secondary);
 }
 
-/* -- Updates Page -- */
-.updates-list {
+/* -- Blog Index & Previews -- */
+.blog-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
   max-width: 800px;
 }
 
-.update-list-item {
+.blog-preview-item {
   padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px dashed var(--border-color);
 }
 
-.update-list-item:last-child {
+.blog-preview-item:last-child {
   border-bottom: none;
+}
+
+.blog-preview-meta {
+  display: flex;
+  gap: var(--space-4);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-2);
+}
+
+.blog-preview-tags {
+  color: var(--accent-color);
+  opacity: 0.8;
+}
+
+.blog-preview-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.blog-preview-title a {
+  color: var(--text-primary);
+}
+
+.blog-preview-title a:hover {
+  color: var(--accent-color);
+}
+
+.blog-prompt-icon {
+  color: var(--accent-color);
+}
+
+.blog-preview-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+}
+
+/* -- Blog Post -- */
+.blog-post-header {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 2px solid var(--accent-glow);
+}
+
+.blog-post-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-4);
+}
+
+.blog-post-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-primary);
+}
+
+/* Markdown Styles */
+.markdown-body {
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 800px;
+}
+
+.markdown-body h2 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.markdown-body h2::before {
+  content: '##';
+  opacity: 0.4;
+  margin-right: var(--space-2);
+  font-family: var(--font-mono);
+}
+
+.markdown-body h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.markdown-body h3::before {
+  content: '###';
+  opacity: 0.4;
+  margin-right: var(--space-2);
+  font-family: var(--font-mono);
+}
+
+.markdown-body p {
+  margin-bottom: var(--space-4);
+}
+
+.markdown-body ul {
+  list-style-type: square;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.markdown-body li {
+  margin-bottom: var(--space-2);
+}
+
+.markdown-body code {
+  background: var(--surface-hover);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--accent-hover);
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-6);
+}
+
+.back-link:hover {
+  color: var(--accent-color);
 }
 
 /* -- Coin Page -- */
