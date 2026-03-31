@@ -13,14 +13,9 @@ export default function Home() {
             {/* Hero Section */}
             <section className="hero container">
                 <h1 className="hero-title">
-                    Security engineer in the making. <br />
-                    <span className="text-muted">Building practical labs and tools.</span>
+                    Nullgarden
                 </h1>
                 <div className="hero-statement">
-                    <p>
-                        I break things to understand how they work, then I build better defenses.
-                        Currently focused on cloud infrastructure, concurrent tooling, and zero-trust architectures.
-                    </p>
                     <p>
                         If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
                         Feel free to look around and see what I've been working on.
@@ -54,10 +49,10 @@ export default function Home() {
                         Contact Me
                     </Link>
                 </div>
-            </section>
+            </section >
 
             {/* Featured Projects */}
-            <section className="featured-section container section-padding">
+            < section className="featured-section container section-padding" >
                 <div className="section-header">
                     <h2>Featured Work</h2>
                     <Link to="/projects" className="view-all-link">All Projects →</Link>
@@ -67,20 +62,22 @@ export default function Home() {
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
-            </section>
+            </section >
 
             {/* Latest Update */}
-            {latestUpdate && (
-                <section className="latest-update-section container section-padding">
-                    <div className="section-header">
-                        <h2>Latest Update</h2>
-                        <Link to="/updates" className="view-all-link">All Updates →</Link>
-                    </div>
-                    <div className="latest-update-card">
-                        <UpdateItem update={latestUpdate} />
-                    </div>
-                </section>
-            )}
-        </div>
+            {
+                latestUpdate && (
+                    <section className="latest-update-section container section-padding">
+                        <div className="section-header">
+                            <h2>Latest Update</h2>
+                            <Link to="/updates" className="view-all-link">All Updates →</Link>
+                        </div>
+                        <div className="latest-update-card">
+                            <UpdateItem update={latestUpdate} />
+                        </div>
+                    </section>
+                )
+            }
+        </div >
     );
 }

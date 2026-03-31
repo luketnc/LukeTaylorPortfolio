@@ -20,8 +20,24 @@ My fingerprint is:
 0C42 067F E279 1AF7 9D14  9149 87B2 0315 23F3 3C8E
 \`\`\`
 
+## PGP Proof
+You can view the raw proof file here: [pgp-proof.txt](/pgp-proof.txt)
 
+\`\`\`text
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
 
+I control https://nullgarden.com and https://nullgarden.blog
+PGP Fingerprint: 0C42 067F E279 1AF7 9D14  9149 87B2 0315 23F3 3C8E
+Issued: 2026-03-11
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQMQgZ/4nka950UkUmHsgMVI/M8jgUCabEJTAAKCRCHsgMVI/M8
+jk/KAQCUB4yEcWPEBzB3rRb9yJNzW9h3OZB8wgJ+XRyYBebnAQD9EHbgZLguUIjw
+LgKKuNiRPYlpdkKttq8GpWTNj6D28A8=
+=eKT/
+-----END PGP SIGNATURE-----
+\`\`\`
         `,
         overview: "",
         goal: "",

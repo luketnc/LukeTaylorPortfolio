@@ -3,6 +3,7 @@ import { projectsData } from '../data/mockData';
 import { Github, ExternalLink, FileText, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeRaw from 'rehype-raw';
 
 export default function ProjectDetail() {
@@ -59,7 +60,7 @@ export default function ProjectDetail() {
                 {project.content ? (
                     <div className="markdown-body">
                         <ReactMarkdown
-                            remarkPlugins={[remarkGfm]}
+                            remarkPlugins={[remarkGfm, remarkBreaks]}
                             rehypePlugins={[rehypeRaw]}
                         >
                             {project.content}
