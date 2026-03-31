@@ -12,9 +12,9 @@
   --text-muted: #6e7681;
 
   /* Accents */
-  --accent-color: #58a6ff;
-  --accent-hover: #79c0ff;
-  --accent-glow: rgba(88, 166, 255, 0.15);
+  --accent-color: #d28e3d;
+  --accent-hover: #e5a45b;
+  --accent-glow: rgba(210, 142, 61, 0.15);
 
   --status-active: #3fb950;
   --status-completed: #a371f7;

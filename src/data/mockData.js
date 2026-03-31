@@ -38,7 +38,7 @@ As an engineer keeping notes in Google Docs, you can easily export them via Add-
 \`\`\`javascript
 // And standard codeblocks!
 function helloWorld() {
-    console.log("Hello, Nullgarden!");
+    console.log("Hello, nullgarden!");
 }
 \`\`\`
 
@@ -193,7 +193,7 @@ NOTE: Use Raspberry Pi Imager. I used Balenaetcher when I did it and kept gettin
 \`\`\`javascript
 // And standard codeblocks!
 function helloWorld() {
-    console.log("Hello, Nullgarden!");
+    console.log("Hello, nullgarden!");
 }
 \`\`\`
 

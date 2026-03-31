@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="container footer-container">
                 <div className="footer-content">
                     <p className="footer-copyright">
-                        &copy; {new Date().getFullYear()} Nullgarden.
+                        &copy; {new Date().getFullYear()} nullgarden.
                     </p>
                     <div className="footer-links">
                         {/* Keeping it pseudonymous as requested */}

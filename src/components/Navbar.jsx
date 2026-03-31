@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X } from 'lucide-react';
+import { Terminal, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -22,8 +22,8 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-container">
         <Link to="/" className="brand">
-          <Shield className="brand-icon" size={24} />
-          <span className="brand-text">Nullgarden</span>
+          <Terminal className="brand-icon" size={24} />
+          <span className="brand-text">nullgarden</span>
         </Link>
         
         {/* Desktop Nav */}

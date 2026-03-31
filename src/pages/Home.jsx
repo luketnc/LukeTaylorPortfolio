@@ -2,7 +2,7 @@ import { projectsData, updatesData } from '../data/mockData';
 import ProjectCard from '../components/ProjectCard';
 import UpdateItem from '../components/UpdateItem';
 import { Link } from 'react-router-dom';
-import { Shield, Server, Terminal, ArrowRight } from 'lucide-react';
+import { Key, Server, Terminal, ArrowRight } from 'lucide-react';
 
 export default function Home() {
     const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3);
@@ -13,7 +13,7 @@ export default function Home() {
             {/* Hero Section */}
             <section className="hero container">
                 <h1 className="hero-title">
-                    Nullgarden
+                    nullgarden
                 </h1>
                 <div className="hero-statement">
                     <p>
@@ -36,7 +36,7 @@ export default function Home() {
                         <span>Custom Security Tooling</span>
                     </div>
                     <div className="focus-item">
-                        <Shield className="focus-icon" />
+                        <Key className="focus-icon" />
                         <span>Applied Zero-Trust</span>
                     </div>
                 </div>

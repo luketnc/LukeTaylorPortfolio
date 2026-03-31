@@ -39,10 +39,10 @@ export default function Contact() {
                             <Mail size={20} /> hello@nullgarden.local
                         </a>
                         <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <Github size={20} /> @NullgardenBuilder
+                            <Github size={20} /> @nullgardenBuilder
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <Twitter size={20} /> @NullgardenSec
+                            <Twitter size={20} /> @nullgardenSec
                         </a>
                     </div>
                 </div>
