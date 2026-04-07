@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { projectsData } from '../data/mockData';
+import { projectsData } from '../data/api';
 import { Github, ExternalLink, FileText, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -38,17 +38,17 @@ export default function ProjectDetail() {
                 <p className="project-one-liner">{project.oneLiner}</p>
 
                 <div className="project-links">
-                    {project.links.repo && (
+                    {project.links?.repo && (
                         <a href={project.links.repo} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                             <Github size={16} /> Repository
                         </a>
                     )}
-                    {project.links.demo && (
+                    {project.links?.demo && (
                         <a href={project.links.demo} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                             <ExternalLink size={16} /> Live Demo
                         </a>
                     )}
-                    {project.links.writeup && (
+                    {project.links?.writeup && (
                         <a href={project.links.writeup} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                             <FileText size={16} /> Writeup
                         </a>

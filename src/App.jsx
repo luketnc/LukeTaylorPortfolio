@@ -6,7 +6,7 @@ import ProjectsIndex from './pages/ProjectsIndex';
 import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Coin from './pages/Coin';
+import Tools from './pages/Tools';
 import Contact from './pages/Contact';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="projects/:slug" element={<ProjectDetail />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />
-          <Route path="coin" element={<Coin />} />
+          <Route path="tools" element={<Tools />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

@@ -1,4 +1,4 @@
-import { blogData } from '../data/mockData';
+import { blogData } from '../data/api';
 import BlogPreview from '../components/BlogPreview';
 
 export default function Blog() {

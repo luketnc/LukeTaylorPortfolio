@@ -1,4 +1,4 @@
-import { projectsData } from '../data/mockData';
+import { projectsData } from '../data/api';
 import ProjectCard from '../components/ProjectCard';
 import { useState } from 'react';
 

@@ -1,4 +1,4 @@
-import { projectsData, blogData } from '../data/mockData';
+import { projectsData, blogData } from '../data/api';
 import ProjectCard from '../components/ProjectCard';
 import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';

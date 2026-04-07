@@ -1,5 +1,4 @@
-export const projectsData = [
-    {
+export default {
         id: "siteproof",
         slug: "siteproof",
         title: "PGP Verification",
@@ -50,6 +49,4 @@ LgKKuNiRPYlpdkKttq8GpWTNj6D28A8=
             demo: "",
             writeup: ""
         }
-    },
-]
-
+    };

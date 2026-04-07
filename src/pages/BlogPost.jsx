@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { blogData } from '../data/mockData';
+import { blogData } from '../data/api';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';

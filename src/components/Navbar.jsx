@@ -10,7 +10,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Coin', path: '/coin' },
+    { name: 'Tools', path: '/tools' },
   ];
 
   const isActive = (path) => {
