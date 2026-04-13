@@ -13,16 +13,19 @@ export default function Home() {
             {/* Hero Section */}
             <section className="hero container">
                 <h1 className="hero-title">
-                    nullgarden
+                    Luke T.
                 </h1>
                 <div className="hero-statement">
-                    <p>
-                        If you are here from my resume, welcome! This is where I document my projects and share my thoughts on security.
-                        Feel free to look around and see what I've been working on.
+                    <p style={{ color: 'var(--accent-text)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
+                        Security Analyst & Researcher
                     </p>
                     <p>
-                        I don't disclose my name or identity publicly, but I cryptographically sign my work. My resume contains a fingerprint that you can use
-                        to verify my identity. See my <Link to="/projects/siteproof" className="text-primary">PGP Verification</Link> project for my public key and verification instructions.
+                        Welcome to my professional portfolio. I specialize in identifying vulnerabilities, 
+                        building robust defense architectures, and analyzing complex network anomalies. 
+                    </p>
+                    <p>
+                        Explore my projects below to see my hands-on experience with SIEM deployments,
+                        penetration testing, and applied machine learning in threat hunting.
                     </p>
                 </div>
 
@@ -33,11 +36,11 @@ export default function Home() {
                     </div>
                     <div className="focus-item">
                         <Terminal className="focus-icon" />
-                        <span>Custom Security Tooling</span>
+                        <span>Network Analysis & Incident Response</span>
                     </div>
                     <div className="focus-item">
                         <Key className="focus-icon" />
-                        <span>Applied Zero-Trust</span>
+                        <span>Vulnerability Assessment & Pentesting</span>
                     </div>
                 </div>
 

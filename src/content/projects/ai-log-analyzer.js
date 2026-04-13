@@ -5,7 +5,7 @@ export default {
     oneLiner: "Using Machine Learning anomaly detection and LLMs to parse and summarize noisy firewall logs.",
     category: "Security Tooling",
     tags: ["Python", "Machine Learning", "AI", "Incident Response", "SOC Automation"],
-    status: "Active",
+    status: "Staging",
     featured: false,
     content: `
 ## Project Overview

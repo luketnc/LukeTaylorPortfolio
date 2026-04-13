@@ -5,7 +5,7 @@ export default {
     oneLiner: "A fast, concurrent vulnerability scanner built in Go.",
     category: "Tooling",
     tags: ["Golang", "Concurrency", "DevSecOps", "Vulnerability Management"],
-    status: "Active",
+    status: "Staging",
     featured: true,
     overview: "Built a lightweight vulnerability scanner to check local container images for known CVEs.",
     goal: "To understand concurrent programming in Go while reinforcing knowledge of CVE databases.",
