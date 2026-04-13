@@ -1,23 +1,23 @@
 export default {
-    id: "pwnagotchi-cookbook",
-    slug: "pwnagotchi-cookbook",
-    title: "Pwnagotchi Cookbook",
-    oneLiner: "A somewhat recent guide to building and configuring a pwnagotchi",
-    category: "Tooling",
-    tags: ["Hardware / IoT", "Linux", "Network Security"],
-    status: "Archived",
-    featured: true,
-    overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",
-    goal: "To understand the basics of sniffing handshakes and configuring a pi zero w",
-    features: [
-        "Soldering of a pi zero w",
-        "Configuring pwnagotchi OS",
-        "Troubleshooting bugs and glitches"
-    ],
-    techStack: ["Bash", "WPA2", "TCP/IP"],
-    results: "Got a pwnagotchi to sniff handshakes and function on a semi supported screen",
-    lessons: "Troubleshooting hardware and software issues simultaneously is a pain and requires a lot of patience. Also, the pi zero w is a solid platform for small projects.",
-    content: `
+  id: "pwnagotchi-cookbook",
+  slug: "pwnagotchi-cookbook",
+  title: "Pwnagotchi Cookbook",
+  oneLiner: "A somewhat recent guide to building and configuring a pwnagotchi",
+  category: "Tooling",
+  tags: ["Hardware / IoT", "Linux", "Network Security", "AI"],
+  status: "Archived",
+  featured: true,
+  overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",
+  goal: "To understand the basics of sniffing handshakes and configuring a pi zero w",
+  features: [
+    "Soldering of a pi zero w",
+    "Configuring pwnagotchi OS",
+    "Troubleshooting bugs and glitches"
+  ],
+  techStack: ["Bash", "WPA2", "TCP/IP"],
+  results: "Got a pwnagotchi to sniff handshakes and function on a semi supported screen",
+  lessons: "Troubleshooting hardware and software issues simultaneously is a pain and requires a lot of patience. Also, the pi zero w is a solid platform for small projects.",
+  content: `
 # Intro
 
 As you have probably gathered the pwnagotchi is a handheld wifi pwning device that looks and acts like a tamagotchi pet. It uses reinforcement learning to help maximize reward (In this case this means switching channels on monitor mode and trying different attacks (Deauth and association) to try to get as much wpa key material as possible. You can then dump this information to your computer and use bruteforce/dictionary attacks to attempt to crack the password (Assuming you collected enough information and have a good wordlist) 

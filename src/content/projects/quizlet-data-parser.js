@@ -4,7 +4,7 @@ export default {
     title: "Quizlet Data Parser",
     oneLiner: "A custom Python automation tool designed to scrape, parse, and structure flashcard data.",
     category: "Automation",
-    tags: ["Python", "Data Parsing", "Automation", "ETL"],
+    tags: ["Python", "Data Parsing", "Automation", "ETL", "AI Enhanced"],
     status: "Completed",
     featured: false,
     content: `

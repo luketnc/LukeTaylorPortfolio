@@ -4,7 +4,7 @@ export default {
     title: "AI Security Log Analyzer",
     oneLiner: "Using Machine Learning anomaly detection and LLMs to parse and summarize noisy firewall logs.",
     category: "Security Tooling",
-    tags: ["Python", "Machine Learning", "AI", "Incident Response", "SOC Automation"],
+    tags: ["Python", "Machine Learning", "AI", "Incident Response", "SOC Automation", "AI Enhanced"],
     status: "Staging",
     featured: false,
     content: `
