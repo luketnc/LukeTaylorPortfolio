@@ -1,13 +1,13 @@
 export default {
-        id: "catbomber-network-analysis",
-        slug: "catbomber-network-analysis",
-        title: "Catbomber Network Analysis",
-        oneLiner: "Network analysis guide detailing detection and removal of a CATBOMBER virus.",
-        category: "Test",
-        tags: ["Incident Response", "Packet Analysis", "Malware Analysis"],
-        status: "Archived",
-        featured: false,
-        content: `
+    id: "catbomber-network-analysis",
+    slug: "catbomber-network-analysis",
+    title: "Catbomber Network Analysis",
+    oneLiner: "Network analysis guide detailing detection and removal of a CATBOMBER virus.",
+    category: "Test",
+    tags: ["Incident Response", "Packet Analysis", "Malware Analysis"],
+    status: "Archived",
+    featured: false,
+    content: `
 ## What Data is Captured in a PCAP FIle
 - PCAPS (or packet captures) are files that hold network traffic information. 
 These files can be used to:
@@ -114,8 +114,8 @@ Both the domain controller and the infected workstation need to be fully reset.
 The firewall needs to be configured to block all traffic to what is possibly the attackers exfiltration server (203.176.135.102).
 The IP address where Phillip’s email password was sent needs to be blocked and investigated (36.89.106.69)
 The server where Phillip got the images from (162.216.0.163) needs to be investigated and potentially blocked depending on what exactly it is.
-Phillips email and password need to be reset immediately.
-Phillips needs to be interviewed to understand more about the human side of this event.
+Phillip's email and password need to be reset immediately.
+Phillip's needs to be interviewed to understand more about the human side of this event.
 
 ## Why is PAcket Analysis Important?
 Packet analysis is an important tool for network analysts, security analysts and incident responders among more
@@ -123,15 +123,15 @@ As displayed in this scenario it can be invaluable for detecting malware in a bu
  Packet analysis is also important for troubleshooting network issues that aren't related to malware (ie performance)
 
         `,
-        overview: "",
-        goal: "",
-        features: [],
-        techStack: [],
-        results: "",
-        lessons: "",
-        links: {
-            repo: "",
-            demo: "",
-            writeup: ""
-        }
-    };
+    overview: "",
+    goal: "",
+    features: [],
+    techStack: [],
+    results: "",
+    lessons: "",
+    links: {
+        repo: "",
+        demo: "",
+        writeup: ""
+    }
+};
