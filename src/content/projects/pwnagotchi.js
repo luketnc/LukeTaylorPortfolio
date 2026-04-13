@@ -4,7 +4,7 @@ export default {
     title: "Pwnagotchi Cookbook",
     oneLiner: "A somewhat recent guide to building and configuring a pwnagotchi",
     category: "Tooling",
-    tags: ["Go", "Hardware", "Wifi"],
+    tags: ["Hardware / IoT", "Linux", "Network Security"],
     status: "Archived",
     featured: true,
     overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",

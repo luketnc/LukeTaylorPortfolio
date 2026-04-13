@@ -4,7 +4,7 @@ export default {
         title: "Ransomeware And Least Privilege",
         oneLiner: "Guide to how to prevent ransomeware attacks using least privilege.",
         category: "Test",
-        tags: ["Least-Privilege", "Malware"],
+        tags: ["Malware Analysis", "Endpoint Security", "Incident Response"],
         status: "Archived",
         featured: false,
         content: `

@@ -1,0 +1,19 @@
+{
+  "api_keys": {
+    "intelx": "",
+    "hibp": "",
+    "hunter": ""
+  },
+  "modules": {
+    "run_holehe": true,
+    "run_dorks": true,
+    "run_local_db": true
+  },
+  "local_db": {
+    "path": "E:/MOAB_Data"
+  },
+  "h8mail": {
+    "enabled": false,
+    "path_to_config_file": ""
+  }
+}

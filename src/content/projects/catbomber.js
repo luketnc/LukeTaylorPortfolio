@@ -4,7 +4,7 @@ export default {
         title: "Catbomber Network Analysis",
         oneLiner: "Network analysis guide detailing detection and removal of a CATBOMBER virus.",
         category: "Test",
-        tags: ["Packet Analysis", "Ethical Hacking"],
+        tags: ["Incident Response", "Packet Analysis", "Malware Analysis"],
         status: "Archived",
         featured: false,
         content: `

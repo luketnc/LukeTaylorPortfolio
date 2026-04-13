@@ -14,5 +14,13 @@ export const toolsData = [
         description: "A quick bash script using awk and grep to pull sensitive tokens from standard web access logs.",
         filePath: "/scripts/parse_logs.sh",
         size: "0.5 KB"
+    },
+    {
+        id: "mailsleuth",
+        name: "MailSleuth",
+        language: "Python",
+        description: "An OSINT automation tool to search for email exposures across paste sites, databases, and IntelX.",
+        filePath: "/scripts/mailsleuth/mailsleuth.py",
+        size: "9.5 KB"
     }
 ];

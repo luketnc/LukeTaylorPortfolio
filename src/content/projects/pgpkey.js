@@ -4,7 +4,7 @@ export default {
         title: "PGP Verification",
         oneLiner: "PGP key verification",
         category: "Cryptography",
-        tags: ["Cryptography", "Verification"],
+        tags: ["Cryptography", "Identity Verification"],
         status: "Archived",
         featured: false,
         content: `

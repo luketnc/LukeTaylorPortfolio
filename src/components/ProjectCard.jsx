@@ -27,7 +27,9 @@ export default function ProjectCard({ project }) {
                 <span className="project-category">{project.category}</span>
                 <div className="project-tags">
                     {project.tags?.map(tag => (
-                        <span key={tag} className="tag">{tag}</span>
+                        <Link key={tag} to={`/projects?tag=${encodeURIComponent(tag)}`} className="tag">
+                            {tag}
+                        </Link>
                     ))}
                 </div>
             </div>

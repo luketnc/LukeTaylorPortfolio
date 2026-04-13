@@ -40,16 +40,6 @@ export const blogData = [
         relatedProjectSlug: "vuln-scanner-go"
     },
     {
-        id: "post-2",
-        slug: "starting-zero-trust-lab",
-        date: "2026-02-10",
-        title: "Starting the Zero-Trust Lab",
-        excerpt: "Just planned out the architecture for the Zero-Trust Auth lab. Will be using Terraform.",
-        content: `Just planned out the architecture for the Zero-Trust Auth lab. Will be using Terraform to make it easily reproducible. Planning to focus heavily on AWS IAM permissions boundaries.\n\nI want to simulate 3 distinct attack paths:\n1. SSRF to Instance Metadata\n2. Over-permissive S3 Bucket Policy\n3. Token theft via compromised local machine\n\nI'll be publishing the IAC scripts soon.`,
-        tags: ["Planning", "Cloud"],
-        relatedProjectSlug: "auth-lab-infra"
-    },
-    {
         id: "post-3",
         slug: "site-redesign-react",
         date: "2026-01-15",
