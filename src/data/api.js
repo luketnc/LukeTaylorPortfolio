@@ -2,6 +2,7 @@ const projectModules = import.meta.glob('../content/projects/*.js', { eager: tru
 
 // Flatten just in case a module exports an array instead of a single object
 export const projectsData = Object.values(projectModules).flatMap(mod => {
+    if (!mod || !mod.default) return [];
     if (Array.isArray(mod.default)) {
         return mod.default;
     }

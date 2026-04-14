@@ -535,6 +535,26 @@ button {
   color: var(--text-primary);
 }
 
+/* AI Enhanced Tag Styles */
+.tag.ai-enhanced-tag {
+  color: #e5c07b;
+  border-color: rgba(210, 153, 34, 0.4);
+  background: rgba(210, 153, 34, 0.1);
+}
+
+.filter-btn.ai-enhanced-tag {
+  color: #e5c07b;
+  border-color: rgba(210, 153, 34, 0.4);
+}
+
+.filter-btn.ai-enhanced-tag:hover,
+.filter-btn.ai-enhanced-tag.active {
+  background: rgba(210, 153, 34, 0.15);
+  border-color: #e5c07b;
+  color: #e5c07b;
+  box-shadow: 0 4px 12px rgba(210, 153, 34, 0.15);
+}
+
 .page-header {
   margin-bottom: var(--space-8);
 }

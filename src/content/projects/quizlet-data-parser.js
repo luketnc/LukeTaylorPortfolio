@@ -33,7 +33,8 @@ The script handles edge cases such as multi-line definitions, missing terms, and
     ],
     techStack: ["Python", "BeautifulSoup", "Data Parsing"],
     results: "Reduced the time needed to migrate a 500-card study deck from hours to seconds.",
-    lessons: "Web structures change frequently; relying on brittle CSS selectors in scraping requires frequent maintenance.",
+    lesson: "Web structures change frequently; relying on brittle CSS selectors in scraping requires frequent maintenance.",
+    aiEnhancements: "I originally wrote this script using procedural code. I collaborated with an AI agent to completely refactor the python script into modular functions, which dramatically improved maintainability and allowed me to add multi-format exporting without spaghetti code.",
     links: {
         repo: "",
         demo: "",

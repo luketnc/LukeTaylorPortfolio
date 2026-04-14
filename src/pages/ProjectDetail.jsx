@@ -65,6 +65,14 @@ export default function ProjectDetail() {
                         >
                             {project.content}
                         </ReactMarkdown>
+
+                        {project.tags && project.tags.includes('AI Enhanced') && project.aiEnhancements && (
+                            <div className="alert-box warning" style={{marginTop: '2rem'}}>
+                                <div className="alert-content">
+                                    <strong>AI Enhancements:</strong> {project.aiEnhancements}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <>
@@ -105,6 +113,17 @@ export default function ProjectDetail() {
                             <h2>Lessons & Tradeoffs</h2>
                             <p>{project.lessons}</p>
                         </section>
+
+                        {project.tags && project.tags.includes('AI Enhanced') && project.aiEnhancements && (
+                            <section className="project-section">
+                                <h2>AI Enhancements</h2>
+                                <div className="alert-box warning" style={{marginBottom: '0'}}>
+                                    <div className="alert-content">
+                                        <p style={{marginBottom: 0}}>{project.aiEnhancements}</p>
+                                    </div>
+                                </div>
+                            </section>
+                        )}
                     </>
                 )}
             </div>
