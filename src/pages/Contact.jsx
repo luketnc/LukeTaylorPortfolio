@@ -24,6 +24,13 @@ export default function Contact() {
                     </div>
                 </div>
 
+                <div className="contact-info" style={{ marginBottom: '3rem' }}>
+                    <h2>Contracting & Freelance</h2>
+                    <p className="contact-desc">
+                        I am currently available for security assessments, custom automation/tool development, and technical consulting. If you have a project or need specialized expertise, reach out via email to discuss how we can work together.
+                    </p>
+                </div>
+
                 <div className="support-info">
                     <h2>Support</h2>
                     <p className="contact-desc">
