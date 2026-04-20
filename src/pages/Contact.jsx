@@ -15,8 +15,8 @@ export default function Contact() {
                         I'm generally open to discussing security topics, reviewing labs, or collaborating on open-source tooling.
                     </p>
                     <div className="social-links">
-                        <a href="mailto:nullgarden@proton.me" className="social-link">
-                            <Mail size={20} /> nullgarden@proton.me
+                        <a href="mailto:luketnc@gmail.com" className="social-link">
+                            <Mail size={20} /> luketnc@gmail.com
                         </a>
                         <a href="https://t.me/nullgarden" target="_blank" rel="noopener noreferrer" className="social-link">
                             <MessageCircle size={20} /> @nullgarden
