@@ -13,15 +13,15 @@ export default function Home() {
             {/* Hero Section */}
             <section className="hero container">
                 <h1 className="hero-title">
-                    Luke T.
+                    Luke Taylor
                 </h1>
                 <div className="hero-statement">
                     <p style={{ color: 'var(--accent-text)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Welcome to my professional portfolio. I specialize in identifying vulnerabilities, 
-                        building robust defense architectures, and analyzing complex network anomalies. 
+                        Welcome to my professional portfolio. I specialize in identifying vulnerabilities,
+                        building robust defense architectures, and analyzing complex network anomalies.
                     </p>
                     <p>
                         Explore my projects below to see my hands-on experience with SIEM deployments,
