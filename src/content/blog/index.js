@@ -1,4 +1,5 @@
 export const blogData = [
+    /*
     {
         id: "post-1",
         slug: "intercom-evil-portal",
@@ -39,6 +40,7 @@ export const blogData = [
         tags: ["Go", "Milestone"],
         relatedProjectSlug: "vuln-scanner-go"
     },
+    */
     {
         id: "post-3",
         slug: "site-redesign-react",

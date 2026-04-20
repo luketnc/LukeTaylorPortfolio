@@ -5,7 +5,7 @@ export default function Blog() {
     return (
         <div className="blog-page container section-padding">
             <header className="page-header">
-                <h1>/var/log/nullgarden</h1>
+                <h1>/var/log/luke-taylor-security</h1>
                 <p className="page-subtitle">Security research, project deep-dives, and terminal musings.</p>
             </header>
 

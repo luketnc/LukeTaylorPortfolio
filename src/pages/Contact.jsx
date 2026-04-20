@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Wallet } from 'lucide-react';
+import { Mail, Wallet } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -17,9 +17,6 @@ export default function Contact() {
                     <div className="social-links">
                         <a href="mailto:luketnc@gmail.com" className="social-link">
                             <Mail size={20} /> luketnc@gmail.com
-                        </a>
-                        <a href="https://t.me/nullgarden" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <MessageCircle size={20} /> @nullgarden
                         </a>
                     </div>
                 </div>
