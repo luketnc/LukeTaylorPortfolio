@@ -1,4 +1,4 @@
-export default {
+/* export default {
     id: "black-beacon-c2",
     slug: "black-beacon-c2",
     title: "Black Beacon C2 Framework",
@@ -29,4 +29,4 @@ This project focuses on the core infrastructure required to issue commands to co
         demo: "",
         writeup: ""
     }
-};
+}; */
