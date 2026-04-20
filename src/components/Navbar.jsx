@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="container nav-container">
         <Link to="/" className="brand">
           <Terminal className="brand-icon" size={24} />
-          <span className="brand-text">Luke T.</span>
+          <span className="brand-text">Luke Taylor</span>
         </Link>
         
         {/* Desktop Nav */}
