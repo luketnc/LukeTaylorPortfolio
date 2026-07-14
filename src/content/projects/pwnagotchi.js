@@ -18,7 +18,7 @@ export default {
   results: "Got a pwnagotchi to sniff handshakes and function on a semi supported screen",
   lessons: "Troubleshooting hardware and software issues simultaneously is a pain and requires a lot of patience. Also, the pi zero w is a solid platform for small projects.",
   content: `
-# Intro
+## Intro
 
 As you have probably gathered the pwnagotchi is a handheld wifi pwning device that looks and acts like a tamagotchi pet. It uses reinforcement learning to help maximize reward (In this case this means switching channels on monitor mode and trying different attacks (Deauth and association) to try to get as much wpa key material as possible. You can then dump this information to your computer and use bruteforce/dictionary attacks to attempt to crack the password (Assuming you collected enough information and have a good wordlist) 
 
@@ -36,7 +36,7 @@ As you have probably gathered the pwnagotchi is a handheld wifi pwning device th
 - 4-way handshake and some networking skills  
 - Process enjoyment and experiencing “flow”
 
-# Parts Needed:
+## Parts Needed:
 
 - [Raspberry pi 0 w (2017 Model)](https://www.amazon.com/Raspberry-Pi-Zero-Wireless-model/dp/B06XFZC3BX/ref=sr_1_3_pp?crid=2OMU27JWX0365&dib=eyJ2IjoiMSJ9.FiXY83smwHsE1d-G2Fuq78PGTyiTImQlUYK68xjtMiPYvtsNC1RK2IR2EeUU9rR8-HmkjX7VFPZk7G33Hem-jn5udS_uoSTdf752a9LjzrAXspBQm4Rki-YFoECP_jZcHqYmCepR9i_13pYMps0aINCD8sdrsKV4lfvZ8dMUTfPIjFflq6-QdUvN2QsiUVIuVCjMyljyfhgDg-cOQ7q0W8jPtZiiUahabGMcUlbTBag.xipIVPF72kaIpy8mYkwxFbLTkp-5hNzaTeNLHfkC9WU&dib_tag=se&keywords=pi+0+w&qid=1746041825&sprefix=pi+0+%2Caps%2C132&sr=8-3)  
 - [Waveshare E-INK Dsiplay](https://www.amazon.com/dp/B07Q22WDB9?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)  
@@ -46,7 +46,7 @@ As you have probably gathered the pwnagotchi is a handheld wifi pwning device th
 Total Price: \~$83  
 (You can thank Trump, I got mine for like $60)
 
-# Software Needed:
+## Software Needed:
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)   
 - [Kali (VM)](https://www.kali.org/get-kali/#kali-virtual-machines)   
@@ -60,7 +60,7 @@ Total Price: \~$83
 - OPTIONAL: Dummy router  
   - Its nice to have a dummy router for cracking, and also a little safer LOL
 
-# Hardware Assembly
+## Hardware Assembly
 
 ## Step 1: Soldering your header pins
 
@@ -75,7 +75,7 @@ I didn't have flux paste or a desolder pump (and I didnt have a small enough tip
 
 I also recommend watching this video or this video to help get the basics down. \-- remember you only (Likely) have 1 raspberry pi on hand so practice on some wires or an expansion board or some shit if you want.
 
-### TIPS
+## TIPS
 
 - Don’t hold the whole spool of solder, its rather unwieldy and just a pain in the ass. Instead wrap a coil into a ring around your ringer and control it like that  
 - Dial the heat in, you dont want to go too hot and fuck anything up but you want to be able to heat your pins and solder up uniformly so you get nice clean solders  
@@ -86,8 +86,6 @@ I also recommend watching this video or this video to help get the basics down. 
 ## Step 2: Multimeter/Testing Your Work
 
 After soldering it’s always smart to test your work. After this point is when things started to go wrong for me so the testing is really important. Consult the pinout diagrams here. This is super important and overlooked in the shitty old cookbook I followed when I did this project initially. Understanding pinout diagrams looks daunting but is worth it so you can rule out your soldering job or hardware failures if anything goes wrong later.
-
-## 
 
 ## Step 3: Attaching the PiSugar
 
@@ -108,7 +106,7 @@ Again this a super easy one. If you haven't done it already, line up the pins an
 
 If everything looks good you are officially done with hardware\! Congrats\!
 
-# Software Setup
+## Software Setup
 
 The first part of this is relatively easy as you're just flashing the pwnagotchi OS onto your micro SD card. However there are a few caveats. When I did this last year I tried so hard to get the latest pwnagotchi main release to work to no avail. Luckily there is a workable fork by JayoFelony which is apprently still being maintained which is sick and saves us a fuck ton of time.
 
@@ -123,5 +121,20 @@ No need to unzip your file just let the Imager in the next step handle that
 ## Step 2: Flash the Pwnagotchi OS
 
 NOTE: Use Raspberry Pi Imager. I used Balenaetcher when I did it and kept getting bad writes for some reason so probably best to stick with what works
+
+## Step 3: Configure config.toml
+
+Once it's flashed, before you eject the SD card, pop open the boot partition and set up your \`config.toml\`. This is where all your settings live (WiFi whitelist, display type, plugins, the AI section, etc). Two gotchas cost me a stupid amount of time here:
+
+- **Set the right display.** My Waveshare V3 e-ink came dead on arrival, so I swapped to a V4 and had to set \`ui.display.type = "waveshare_4"\` in the config. These are NOT interchangeable. If your screen stays blank after boot, 90% of the time it's the wrong display type in here, not busted hardware. Double check the exact model you actually have.
+- **You have to actually turn the AI on.** This one got me. Out of the box the reinforcement learning brain isn't really doing anything useful until you enable and configure the \`ai\` section (\`ai.enabled = true\`) and give it time to train. Skip this and you basically just have a dumb deauther with a cute face. Turn it on, let it cook, and it'll start tuning its own parameters over time.
+
+## Step 4: First Boot and a Word on Forks
+
+Boot it up, watch the face, and confirm it's hopping channels and grabbing handshakes.
+
+One more time for the people in the back: use [jayofelony's fork](https://github.com/jayofelony/pwnagotchi), not the official repo. The official one is basically abandonware at this point and fighting with it is a miserable time. Jay's fork is actively maintained, plays nice with newer Pi OS and hardware, and has way better plugin support. Do yourself a favor and start there instead of learning it the hard way like I did.
+
+From here it's mostly plugin config and letting it run. Take it on a walk, let it collect handshakes, then dump the pcaps to your cracking rig when you get home.
         `
 };

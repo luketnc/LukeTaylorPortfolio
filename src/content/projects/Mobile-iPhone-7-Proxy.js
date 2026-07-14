@@ -5,7 +5,7 @@ export default {
     oneLiner: "Mobile App pentesting using an iPhone 7 as a proxy for Burp Suite",
     category: "Web Security",
     tags: ["Certificate Pinning", "Web Vuln", "API", "Root", "Exploit"],
-    status: "Complete",
+    status: "Completed",
     featured: true,
     content: `
 Overview

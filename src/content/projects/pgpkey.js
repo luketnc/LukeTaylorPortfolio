@@ -1,3 +1,5 @@
+/* Pseudonym PGP identity — commented out while moving off the nullgarden domains.
+   Recoverable if you want a real-identity crypto project later.
 export default {
         id: "siteproof",
         slug: "siteproof",
@@ -50,3 +52,4 @@ LgKKuNiRPYlpdkKttq8GpWTNj6D28A8=
             writeup: ""
         }
     };
+*/

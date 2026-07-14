@@ -5,7 +5,7 @@ export default {
     oneLiner: "Investigating the Key Reinstallation Attack (KRACK) against WPA2 and its modern implications.",
     category: "Wireless Security",
     tags: ["Wireless Security", "WPA2", "Cryptography", "Network Recon"],
-    status: "Staging",
+    status: "Active",
     featured: false,
     content: `
 ## Project Staging Overview

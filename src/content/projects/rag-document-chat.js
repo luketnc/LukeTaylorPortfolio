@@ -5,7 +5,7 @@ export default {
     oneLiner: "Building a Retrieval-Augmented Generation (RAG) system to securely query and summarize internal documentation.",
     category: "AI & Machine Learning",
     tags: ["Python", "AI", "LLMs & RAG", "Backend Engineering"],
-    status: "Staging",
+    status: "Active",
     featured: false,
     content: `
 ## Project Overview

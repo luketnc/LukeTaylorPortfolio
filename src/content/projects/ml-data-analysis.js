@@ -10,8 +10,8 @@ export default {
     content: `
 ## An AI-Powered Analysis and Prediction of Laptop Sales: Insights for Strategic Business Decisions
 
-nullgarden  
-Data Analytics Project Report  
+Luke Taylor
+Data Analytics Project Report
 November 17, 2024  
 
 ## Introduction
