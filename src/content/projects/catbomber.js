@@ -8,7 +8,7 @@ export default {
     status: "Archived",
     featured: false,
     content: `
-## What Data is Captured in a PCAP FIle
+## What Data is Captured in a PCAP File
 - PCAPS (or packet captures) are files that hold network traffic information. 
 These files can be used to:
     - Troubleshoot network issues
@@ -18,7 +18,7 @@ These files can be used to:
     - Wireshark
     - TCPdump
 
-## Methadology and Theory
+## Methodology and Theory
 - The CATBOMBER PCAP is almost certainly taken from the domain controller
     - A domain controller is basically a server that manages security, authorization, and authentication.
 
@@ -105,7 +105,7 @@ The /81 suffix seems to be an attempt to obfuscate the request URL to prevent it
 ## Post Analysis Conclusion
 From my analysis, this is what we can gather happened:
 An employee (Phillip) downloaded and presumably launched 2 booby trapped .PNG files that infected his workstation (from 162.216.0.163)
-The trojans in those files then started exfiltrating information from phillips workstation (namely his email and password to 36.89.106.69)
+The trojans in those files then started exfiltrating information from Phillip's workstation (namely his email and password to 36.89.106.69)
 The POST traffic indicates that the attackers also had/have access to the domain controller (based on the ipconfig /all commands that were exfiltrated from both devices and sent to 203.176.135.102)
 
 ## Incident Response Plan
@@ -115,9 +115,9 @@ The firewall needs to be configured to block all traffic to what is possibly the
 The IP address where Phillip’s email password was sent needs to be blocked and investigated (36.89.106.69)
 The server where Phillip got the images from (162.216.0.163) needs to be investigated and potentially blocked depending on what exactly it is.
 Phillip's email and password need to be reset immediately.
-Phillip's needs to be interviewed to understand more about the human side of this event.
+Phillip needs to be interviewed to understand more about the human side of this event.
 
-## Why is PAcket Analysis Important?
+## Why is Packet Analysis Important?
 Packet analysis is an important tool for network analysts, security analysts and incident responders among more
 As displayed in this scenario it can be invaluable for detecting malware in a business/company setting
  Packet analysis is also important for troubleshooting network issues that aren't related to malware (ie performance)

@@ -8,7 +8,7 @@ export default {
     status: "Completed",
     featured: true,
     content: `
-**An AI-Powered Analysis and Prediction of Laptop Sales: Insights for Strategic Business Decisions**
+## An AI-Powered Analysis and Prediction of Laptop Sales: Insights for Strategic Business Decisions
 
 nullgarden  
 Data Analytics Project Report  
@@ -16,7 +16,7 @@ November 17, 2024
 
 ## Introduction
 
-In today’s market, leveraging data-driven insights is essential for making informed business decisions. This report focuses on AI-powered analysis and predictions based off of a laptop pricing data set and a laptop review data set. In this report my methods for applying descriptive, diagnostic, predictive, and prescriptive analytics are showcased in the context of addressing three critical business questions. For readability, I do not make commentary or insights on data until the prescriptive analysis section.  This report aims to bridge the gap between data analysis and strategic decision-making, showcasing how AI can optimize business outcomes in the technology retail sector as well as how it can empower individuals to understand complex math and statistical data. 
+In today’s market, leveraging data-driven insights is essential for making informed business decisions. This report focuses on AI-powered analysis and predictions based on a laptop pricing data set and a laptop review data set. In this report my methods for applying descriptive, diagnostic, predictive, and prescriptive analytics are showcased in the context of addressing three critical business questions. For readability, I do not make commentary or insights on data until the prescriptive analysis section.  This report aims to bridge the gap between data analysis and strategic decision-making, showcasing how AI can optimize business outcomes in the technology retail sector as well as how it can empower individuals to understand complex math and statistical data. 
 
 ## Methodology
 
@@ -87,9 +87,9 @@ To start I examined the correlation matrix (Figure 3) and found that the relatio
 
 ## Conclusion
 
-This report demonstrates the use of data analysis to uncover insights for optimizing laptop sales strategies. By applying descriptive, diagnostic, predictive, and prescriptive analytics to a laptop pricing dataset, I was able to address my business questions and offer actionable recommendations. The descriptive analysis revealed valuable insights into pricing and specifications of laptops, while the diagnostic analysis highlighted the significant factors influencing laptop prices, such as RAM and storage. Through predictive modeling, I demonstrated how AI can accurately forecast laptop prices based on key features. Furthermore, sentiment analysis of customer reviews provided additional perspectives, particularly on the importance of price in purchasing decisions. The prescriptive analysis culminated in targeted recommendations for manufacturers, such as offering customizable RAM and storage options, optimizing screen quality for budget laptops, and considering price-sensitive customers with specific products tailored for them. By leveraging these insights, businesses can not only improve their pricing strategies but also cater more effectively to diverse consumer needs in the laptop market. Overall, this project was a good exercise in data analytics. However, next time I would like to scrape my own data so I can have the same data for customer review sentiment analysis and the laptop pricing statistical analysis for even more insightful insights on specific computer models.
+This report demonstrates the use of data analysis to uncover insights for optimizing laptop sales strategies. By applying descriptive, diagnostic, predictive, and prescriptive analytics to a laptop pricing dataset, I was able to address my business questions and offer actionable recommendations. The descriptive analysis revealed valuable insights into pricing and specifications of laptops, while the diagnostic analysis highlighted the significant factors influencing laptop prices, such as RAM and storage. Through predictive modeling, I demonstrated how AI can accurately forecast laptop prices based on key features. Furthermore, sentiment analysis of customer reviews provided additional perspectives, particularly on the importance of price in purchasing decisions. The prescriptive analysis culminated in targeted recommendations for manufacturers, such as offering customizable RAM and storage options, optimizing screen quality for budget laptops, and considering price-sensitive customers with specific products tailored for them. By leveraging these insights, businesses can not only improve their pricing strategies but also cater more effectively to diverse consumer needs in the laptop market. Overall, this project was a good exercise in data analytics. However, next time I would like to scrape my own data so I can have the same data for customer review sentiment analysis and the laptop pricing statistical analysis for even more valuable insights on specific computer models.
 
-**Sources**
+## Sources
 * Sentiment Analysis Dataset: [PapersWithCode - Laptop-ACOS](https://paperswithcode.com/dataset/laptop-acos)
 * Code Assistant: [ChatGPT](https://chatgpt.com/)
 * Laptop Price Dataset: [Kaggle - Laptop Price Dataset](https://www.kaggle.com/datasets/juanmerinobermejo/laptops-price-dataset)
@@ -105,7 +105,7 @@ This report demonstrates the use of data analysis to uncover insights for optimi
     results: "Successfully built and evaluated a predictive pipeline demonstrating which models performed best on the dataset.",
     lessons: "Understanding which metrics to optimize is as important as the model itself. Random Forests often overfit if not tuned correctly, but generally provide strong baseline results.",
     links: {
-        repo: "YOUR_GITHUB_LINK_HERE",
+        repo: "",
         demo: "",
         writeup: ""
     }

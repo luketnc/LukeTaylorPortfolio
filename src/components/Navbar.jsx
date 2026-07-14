@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Terminal, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -22,7 +22,6 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-container">
         <Link to="/" className="brand">
-          <Terminal className="brand-icon" size={24} />
           <span className="brand-text">Luke Taylor</span>
         </Link>
         

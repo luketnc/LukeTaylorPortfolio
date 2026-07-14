@@ -1,8 +1,8 @@
 export default {
         id: "ransomware-and-least-privilege",
         slug: "ransomware-and-least-privilege",
-        title: "Ransomeware And Least Privilege",
-        oneLiner: "Guide to how to prevent ransomeware attacks using least privilege.",
+        title: "Ransomware And Least Privilege",
+        oneLiner: "Guide to how to prevent ransomware attacks using least privilege.",
         category: "Test",
         tags: ["Malware Analysis", "Endpoint Security", "Incident Response"],
         status: "Archived",
@@ -18,7 +18,7 @@ File sharing on a Windows Server is interesting because it doesn't work like an 
 Instead it uses a SMB (Server Message Block) protocol, which allows users to access files on a network as if they were on the local drive
 Security controls and permission are important to configure for shared drives because they can be exploited and sometimes be the target of ransomware
 
-## Methadology and Tools
+## Methodology and Tools
 The tools used in this project are:
 Windows Server Management Tools
 RanSim malware script
@@ -67,7 +67,7 @@ To put this into Windows shared folder syntax we need to type \\192.168.1.2\cis
 After being prompted with a login screen, we will elect to login as John
 Our first step is to check permissions and ensure that we have full permissions (We do)
 Our next step is to make a text document that has our name on it
-After doing so we will log back in as Jane, checker her permissions, and then delete that document, showcasing that both users can read and write
+After doing so we will log back in as Jane, check her permissions, and then delete that document, showcasing that both users can read and write
 
 <img src="/images/ransomware-least-priv/ransom-7.png" alt="ransom-7" style="width: 100%; border-radius: 8px;" />
 
@@ -93,7 +93,7 @@ After that we need to navigate into the Quarantine folder so that we can run the
 
 <img src="/images/ransomware-least-priv/ransom-11.png" alt="ransom-11" style="width: 100%; border-radius: 8px;" />
 
-## Encyrpting the File as Jane
+## Encrypting the File as Jane
 Next we will run Ransim by typing the “.\RanSim.ps1 -Mode encrypt -TargetPath z:\” command
 This will encrypt the files on our shared drive from Jane's account, the same way that a ransomware attack would encrypt files on any drive it can get to
 
@@ -140,7 +140,7 @@ In this case all files will be encrypted because Users are able to encrypt files
 
 <img src="/images/ransomware-least-priv/ransom-16.png" alt="ransom-16" style="width: 100%; border-radius: 8px;" />
 
-## Ransomeware Mitigation
+## Ransomware Mitigation
 Use Case 1 (Users create, others read)
 Keep read-only access for most users.
 Regular backups of user-created files.
@@ -169,7 +169,7 @@ Reasoning: Users need to be able to Read and write but do not need to list folde
 ## Best Practice for this Scenario Part 2
 Other security measures that could be implemented: 
 Make Backups of the shared folder to prevent ransomware from completely stopping operations
-Use seperate folders to make sure that access levels are separated
+Use separate folders to make sure that access levels are separated
 Make sure that passwords must be reset often
 Ensure that passwords have a complexity requirement
 Use network segmentation to make sure again that only the people that need access have it

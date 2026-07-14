@@ -2,7 +2,6 @@ import { projectsData, blogData } from '../data/api';
 import ProjectCard from '../components/ProjectCard';
 import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
-import { Key, Server, Terminal, ArrowRight } from 'lucide-react';
 
 export default function Home() {
     const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3);
@@ -20,37 +19,9 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Welcome to my professional portfolio. I specialize in identifying vulnerabilities,
-                        building robust defense architectures, and analyzing complex network anomalies.
+                        Security analyst with a focus on breaking things to understand how they work.
+                        I dig into networks, build detection systems, and occasionally write about what I find.
                     </p>
-                    <p>
-                        Explore my projects below to see my hands-on experience with SIEM deployments,
-                        penetration testing, and applied machine learning in threat hunting.
-                    </p>
-                </div>
-
-                <div className="focus-areas">
-                    <div className="focus-item">
-                        <Server className="focus-icon" />
-                        <span>Cloud & Infrastructure Security</span>
-                    </div>
-                    <div className="focus-item">
-                        <Terminal className="focus-icon" />
-                        <span>Network Analysis & Incident Response</span>
-                    </div>
-                    <div className="focus-item">
-                        <Key className="focus-icon" />
-                        <span>Vulnerability Assessment & Pentesting</span>
-                    </div>
-                </div>
-
-                <div className="hero-ctas">
-                    <Link to="/projects" className="btn btn-primary">
-                        View Projects <ArrowRight size={16} />
-                    </Link>
-                    <Link to="/contact" className="btn btn-secondary">
-                        Contact Me
-                    </Link>
                 </div>
             </section >
 

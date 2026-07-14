@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
 
 :root {
-  /* Brand & Neutrals - Carbon/Zinc */
-  --bg-color: #09090b;
-  --surface-color: #18181b;
-  --surface-hover: #27272a;
-  --border-color: #3f3f46;
+  /* Brand & Neutrals - Deep Navy */
+  --bg-color: #0b1121;
+  --surface-color: #111a2e;
+  --surface-hover: #182338;
+  --border-color: #243044;
 
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-primary: #e1e7ef;
+  --text-secondary: #8892a4;
+  --text-muted: #5b6578;
 
-  /* Accents - Modern Emerald */
-  --accent-color: #10b981;
-  --accent-hover: #34d399;
-  --accent-text: #34d399; /* Softer, lighter green for reading */
-  --accent-glow: rgba(16, 185, 129, 0.15);
+  /* Accents - Steel Teal */
+  --accent-color: #4dabcf;
+  --accent-hover: #6bc0e0;
+  --accent-text: #6bc0e0;
+  --accent-glow: rgba(77, 171, 207, 0.12);
 
-  --status-active: #10b981;
-  --status-staging: #f59e0b;
-  --status-completed: #3b82f6;
-  --status-archived: #71717a;
+  --status-active: #4dabcf;
+  --status-staging: #e0a45e;
+  --status-completed: #7c8ef2;
+  --status-archived: #5b6578;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -162,7 +162,7 @@ button {
 /* -- Navbar -- */
 .navbar {
   border-bottom: 1px solid var(--border-color);
-  background: rgba(9, 9, 11, 0.8);
+  background: rgba(11, 17, 33, 0.85);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -1003,8 +1003,8 @@ button {
 }
 
 .form-success {
-  background: rgba(63, 185, 80, 0.1);
-  border: 1px solid rgba(63, 185, 80, 0.4);
+  background: rgba(77, 171, 207, 0.1);
+  border: 1px solid rgba(77, 171, 207, 0.3);
   padding: var(--space-6);
   border-radius: var(--radius-md);
   text-align: center;
@@ -1059,7 +1059,7 @@ button {
 .tool-badge {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  background: rgba(13, 17, 23, 0.5);
+  background: rgba(11, 17, 33, 0.5);
   border: 1px solid var(--border-color);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
@@ -1187,11 +1187,11 @@ button {
   padding: 0.1rem 0.3rem;
   border-radius: var(--radius-sm);
   font-size: 0.85em;
-  color: #ff7b72;
+  color: #e8956d;
 }
 
 .markdown-body pre {
-  background: #0d1117;
+  background: #0a0f1a;
   border: 1px solid var(--border-color);
   padding: var(--space-4);
   border-radius: var(--radius-md);

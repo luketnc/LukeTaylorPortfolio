@@ -8,7 +8,7 @@ export default {
         status: "Archived",
         featured: false,
         content: `
-## WHy is Intrusion Detection and Preventiomn Important?
+## Why is Intrusion Detection and Prevention Important?
 
 IDPS is important for a few reasons
 Both IPS and IDS monitor network and host activity for malicious behavior and block and mitigate threats
@@ -18,11 +18,11 @@ While IDPS is important, on its own it is not enough to provide adequate securit
 ## Common Methods of Intrusion Detection and Prevention
 
 Some common IDP systems are:
-Checkpoint Quantem (They were at cyber summit)
+Checkpoint Quantum (They were at cyber summit)
 Cisco Secure IPS
 Snort
 Zeek
-Some of these systems are open source like Zeek or Snort and some of them are commercialized products like CIsco IPS and Checkpoint quantem
+Some of these systems are open source like Zeek or Snort and some of them are commercialized products like Cisco IPS and Checkpoint Quantum
 
 ## What does Snort do?
 We know that snort is a Intrusion prevention system but what exactly does it do?

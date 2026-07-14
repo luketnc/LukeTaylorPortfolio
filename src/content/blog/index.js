@@ -1,71 +1,35 @@
 export const blogData = [
-    /*
     {
         id: "post-1",
         slug: "intercom-evil-portal",
         date: "2026-02-20",
         title: "The Classic 'Intercom' Evil Portal",
-        excerpt: "Evil portal attacks aren't particularly technical feats, but in my experience they are hilariously effective. NO ONE can resist the <insert company apartment or office building name> Intercom.  ",
-        content: `Evil portal attacks aren't particularly technical feats, but in my experience they are often hilariously effective.
-         NO ONE can resist the classic '<insert company apartment or office building name> Intercom' ESSID.
-         It's just funny and harmless sounding enough that, with the right amount of subtle egging certain people will throw their creds
-         in without a second thought. 
-         
-         Why is the intercom broadcasted on 2.4ghz? Why does it prompt me to enter my employee ID/email/Resident ID and password? Why have i never heard
-         an intercom in this building before?
-
-         Doesnt matter bro, just put your creds in it'll be funny.
-
-         Furthermore when I am doing this for a pentest (or an authorized prank) I usually rip the HTML/CSS/JS from thier real login page 
-         (whether that be from a website, wifi login, or whatever else) and then change the header to "Intercom" and host it on a laptop 
-         or my Pi 3 (Flipper with ESP32 if im doing a demo).
-
-        Even though intercom is my favorite evil portal, I also like these
-
-        - Ring-Camera-Setup
-            - Good for harvesting Ring or google creds
-        - Garage_Gate_Controller
-            - Good for harvesting company creds 
-        - SmartThermostat_AP
-            - Could harvest whatever, just use a fake page to bait user into thinking they can control the thermostat then redirect to 
-            a page that says "Your thermostat is broken, please contact building maintenance" or "Login to control your thermostat as a guest".
-        - <real wifi name>_5ghz
-            - Good for harvesting company creds 
-
-        The point is the more curious the target is the more likely they are to interact with the rogue AP. The classic 'Guest Wifi' or 
-        'Free Wifi' doesnt really cut it anymore, some relatively innocent fun or the mild voyeurism of accessing public cameras is usually enough to get the job done.
-
-         
-         `,
-        tags: ["Go", "Milestone"],
-        relatedProjectSlug: "vuln-scanner-go"
+        excerpt: "Writeup coming soon for one of my favorite social engineering tricks.",
+        content: `Writeup coming soon. This is an older project I want to revisit and document properly.`,
+        tags: ["WiFi", "Social Engineering"],
+        relatedProjectSlug: ""
     },
-    */
     {
         id: "post-3",
         slug: "site-redesign-react",
         date: "2026-01-15",
         title: "Site Redesign",
         excerpt: "Ported my old HTML blog over to a React SPA.",
-        content: 'Ported my old HTML blog over to a React SPA. I\'m not a web developer so I vibe coded the style and layout stuff. I think it looks pretty good as it is now but its missing some of the janky early 2000s swag my old site had.',
+        content: 'Ported my old HTML blog over to a React SPA. I\'m not a web developer so I vibe coded the style and layout stuff. I think it looks pretty good as it is now but it\'s missing some of the janky early 2000s swag my old site had.',
         tags: ["Meta"],
+        relatedProjectSlug: null
     },
     {
         id: "post-daily-quote",
         slug: "daily-quote-oop",
         date: "2024-03-01",
         title: "Practice Makes Progress: My Daily Quote Program",
-        excerpt: "Building a Python OOP script simply for the sake of learning scalable architecture.",
-        content: `Recently, I built a simple program that delivers a daily quote using various APIs. At first glance, it’s just a simple app, but for me, it was more of a learning experience and opportunity to practice good programming habits.
+        excerpt: "A simple Python program that grabs quotes from an API. Nothing crazy, but my first real time working with structured JSON and API calls.",
+        content: `Back in 2023 I built a small Python program that pulls a random quote from an API and pushes it to the Mac notification bar. That's pretty much it.
 
-This program could have easily been written as a single .py file. However, I intentionally chose to over-engineer it by implementing object-oriented programming (OOP) principles and using parent classes. The goal for me wasn’t to make the simplest program possible, it was to practice building more complex, scalable solutions.
+It's not a complex program. I could've written the whole thing in one file and called it a day. But I wanted to practice OOP, so I broke it out into classes and parent classes just to get reps in with that pattern. First time I actually worked with structured JSON and made real API calls too.
 
-Throughout the process, I focused on:
-- Practicing OOP to structure my code better.
-- Working with web APIs to fetch dynamic data.
-- Checking changes into GitHub with meaningful commit descriptions (good habits matter!).
-
-The end result may look simple, but the real achievement was honing my skills and pushing myself to work thoughtfully.`,
+Simple project, but it's where I started getting comfortable with Python beyond just writing scripts.`,
         tags: ["Python", "OOP", "Learning"],
         relatedProjectSlug: null
     },
@@ -74,8 +38,8 @@ The end result may look simple, but the real achievement was honing my skills an
         slug: "virus-ftp-keylogger",
         date: "2023-11-10",
         title: "Virus FTP Keylogger: Making Malware",
-        excerpt: "Applying classroom theory to write a functional software keylogger with data exfiltration.",
-        content: `Last fall in my managing security class we went over keylogger hardware and software. I decided to take what I had learned and give it a spin myself. In doing so I was able to create a program that both took keylogs from a target machine and used FTP to transfer the recorded log data to an external FileZilla server. There's nothing quite like writing real malware to understand precisely how to defend against it.`,
+        excerpt: "Took sample keylogger code from class and wired it up to an FTP server. Pretty basic, but that's the point.",
+        content: `We covered keyloggers in my security class, so I grabbed the sample Python code my teacher provided and modified it to exfiltrate the logged keystrokes to a FileZilla FTP server I set up. Really rudimentary stuff. But messing with basic malware, even simple stuff like this, helps you understand what you're actually defending against.`,
         tags: ["Malware", "Python"],
         relatedProjectSlug: null
     },
@@ -84,15 +48,14 @@ The end result may look simple, but the real achievement was honing my skills an
         slug: "overthewire-wargames",
         date: "2023-07-20",
         title: "Diving into CLI with OverTheWire",
-        excerpt: "Pushing through Bandit and Leviathan challenges to solidify Linux command line fluency.",
-        content: `Over the summer, I took on the OverTheWire Bandit and Leviathan Wargames to expand my skills and explore cybersecurity and Linux in an interactive way.
+        excerpt: "Beat Bandit and Leviathan over the summer to get better at Linux. Bandit was great for fundamentals, Leviathan stepped it up with actual vulnerability analysis.",
+        content: `Did the OverTheWire Bandit and Leviathan wargames on my own time over the summer. Beat both.
 
-What I Learned:
-- A wide array of useful Linux commands for file navigation and permissions.
-- Practiced outside-the-box thinking to solve unique privilege escalation challenges.
-- Persistence to push through tough puzzles.
+Bandit is all about hammering down common Linux commands. File navigation, permissions, piping, SSH, all the basics you need to not be lost in a terminal. It also had some cool least privilege challenges that made you think about how file permissions actually work.
 
-This experience reinforced my commitment to learning beyond the classroom. I'm excited to continue stepping outside my comfort zone to grow in this field, and I highly recommend OverTheWire for making their wargames freely available as an introduction to cybersecurity and Linux.`,
+Leviathan was a step up. Instead of just running commands, you're examining small compiled programs and code snippets to find vulnerabilities. Some buffer overflow stuff, a race condition challenge, that kind of thing. Definitely more interesting than Bandit but it builds on those same fundamentals.
+
+Both are free and I'd recommend them to anyone trying to get comfortable with Linux.`,
         tags: ["Linux", "CTF"],
         relatedProjectSlug: null
     },
@@ -101,15 +64,12 @@ This experience reinforced my commitment to learning beyond the classroom. I'm e
         slug: "building-a-pwnagotchi",
         date: "2023-08-05",
         title: "Building an AI-Powered Pwnagotchi",
-        excerpt: "An exercise in hardware hacking, OS compatibility, and capturing 802.11 handshakes.",
-        content: `Over the summer, I embarked on a project to build a Pwnagotchi, an AI-powered WiFi hacking tool that passively captures WPA2 handshakes. This served as an introduction to hardware hacking and hands-on wireless network security.
+        excerpt: "Built a Pwnagotchi for passive WPA2 handshake capture. Full build guide is on the project page.",
+        content: `Built a Pwnagotchi over the summer. If you don't know what that is, it's basically a Raspberry Pi with an e-ink display that passively captures WPA2 handshakes using AI to get better at it over time. Think Tamagotchi but for WiFi hacking.
 
-Key Skills Acquired:
-- Soldering: Learned basic soldering techniques and reworked connections to ensure proper alignment on the Pi board.
-- WiFi Security: Gained deeper insights into WPA2 handshakes.
-- Troubleshooting: Diagnosed issues caused by incompatible SD cards and had to implement a custom fork of the Pwnagotchi OS to ensure compatibility with my specific e-ink screen hardware.
+The full build guide is on my pwnagotchi-cookbook project page, but a couple things worth mentioning here: my Waveshare 3 screen came dead on arrival, so I had to swap the config to Waveshare 4. Also had to manually enable some settings to get the AI/ML features to actually work, which wasn't obvious from the docs.
 
-Challenges like finding the exact OS build that worked with my screen taught me the importance of adaptability and persistence in tackling technical integrations.`,
+Big shout out to jayofelony's fork of the Pwnagotchi OS. It's way better maintained than the official one and saved me a ton of headaches with compatibility.`,
         tags: ["Hardware", "Wireless"],
         relatedProjectSlug: null
     },
@@ -132,12 +92,14 @@ In terms of actually stealing a car, this process required physical access to th
         slug: "html-quizlet-parser",
         date: "2023-12-10",
         title: "Creating a Quiz Data Parser with AI",
-        excerpt: "Leveraging Python and AI to automate translating raw LMS HTML into formatted flashcards.",
-        content: `During finals, my study efficiency was bottlenecked by my school’s quizzes, which were presented in a raw HTML format incompatible with tools like Quizlet. To solve this, I developed a Python parser that converted the raw data into a clean CSV format for bulk uploading.
+        excerpt: "Sophomore year finals. Wrote a Python parser to batch convert practice tests into one big Quizlet.",
+        content: `Sophomore year finals were coming up and I had a bunch of practice tests scattered across my school's website and Canvas. I wanted to combine them all into one big Quizlet to study from, but copying questions by hand was going to take forever.
 
-Given the tight deadline, I leveraged ChatGPT as a pair programmer. I approached the problem by breaking it into detailed structural questions, allowing the AI to handle the implementation of Regex logic that parsed the questions, options, and correct answers. 
+I tried using AI to just do the conversion directly but it wasn't great at handling the inconsistent HTML formatting across different sources. So I wrote an OOP Python parser instead. It takes the raw HTML from the school site and Canvas, figures out the formatting rules for each source, and spits out a Quizlet-importable format.
 
-By clearly defining the problem and breaking it into actionable pieces, I was able to use AI to handle the tedious heavy lifting of string manipulation, ultimately saving hours of manual data entry during my busiest week.`,
+The tricky part was that every page formatted questions differently. Some used tables, some used numbered lists, some were just raw text. I got around it by writing specific parsing rules for each format and falling back to more general ones when needed.
+
+I lost the code at some point but I'll dig it up eventually. When I do, I want to use AI to help tune the parser to handle even more formats.`,
         tags: ["Python", "Automation"],
         relatedProjectSlug: null
     },
@@ -165,7 +127,7 @@ I started by sweeping the provided public IP. Utilizing advanced Nmap techniques
 
 Through a mix of technical enumeration and social engineering (asking my friend on Discord how his bot worked), I discovered the fatal flaw in my recon: the server was operating entirely inside a Tailscale (WireGuard) VPN. 
 
-Because WireGuard is "cryptographically silent," any unauthorized probes sent to the UDP ports are instantly dropped. Without the cryptographic handshake, the Tailnet operates as a black hole, keeping the massive attack surface of the media ecosystem entirely hidden from the public internet. A fantastic demonstration of network defense.`,
+Because WireGuard is "cryptographically silent," any unauthorized probes sent to the UDP ports are instantly dropped. Without the cryptographic handshake, the Tailnet operates as a black hole, keeping the massive attack surface of the media ecosystem entirely hidden from the public internet. Pretty solid defense.`,
         tags: ["Pentesting", "Network Architecture"],
         relatedProjectSlug: null
     }

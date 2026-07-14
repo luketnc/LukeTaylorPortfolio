@@ -29,7 +29,7 @@ Both of these activities and their placement in the ATT&CK Framework illustrate 
 ## Importance of Vulnerability Scanning (Part 2)
 If we are hosting a service with any kind of public facing frontend it is crucial that we maintain a high level of security to protect our infrastructure as much as customer or user data
 Vulnerability scanning allows us to basically scan our servers or networks and ensure that all of the software running is up to date and has no known security issues
-A incredibly recent instance of a supposed lack vulnerability scanning biting someone in the butt is the 4chan hack that happened yesterday
+An incredibly recent instance of a supposed lack vulnerability scanning biting someone in the butt is the 4chan hack that happened yesterday
 The website 4chan was breached and taken down due to php vulnerabilities that would have been seen if proper vulnerability scanning was taking place
 
 ## OpenVAS/Greenbone Setup
@@ -40,7 +40,7 @@ This is basically DMZ mode which is generally never recommended for any network 
 <img src="/images/vuln-scan/vuln-2.png" alt="vuln-2" style="width: 100%; border-radius: 8px;" />
 
 ## Our Windows Server is not very safe...
-Yikes it looks like our is very vulnerable according to our first scan
+Yikes it looks like our server is very vulnerable according to our first scan
 These charts don't mean as much because we only have 1 host and have only done one scan but we can look further into it by accessing the scans report 
 
 <img src="/images/vuln-scan/vuln-3.png" alt="vuln-3" style="width: 100%; border-radius: 8px;" />
@@ -51,7 +51,7 @@ Now that we have taken a look at our current vulnerability report we will restri
 
 <img src="/images/vuln-scan/vuln-4.png" alt="vuln-4" style="width: 100%; border-radius: 8px;" />
 
-## PF Sense Firewall CHanges
+## PF Sense Firewall Changes
 For this test we want to set some rules to allow users outside of our private network to ping our server, access our webserver and connect to a windows file share
 The hints for how to do this are in the instructions so we will allow the following ports
 ICMP (For Pinging)
@@ -82,7 +82,7 @@ This time we did not get any vulnerabilities because the necessary ports were bl
 ## Switching Gears....
 Thus Far we have been approaching firewall configuration from the perspective of keeping the bad guys out, but what about keeping employees on task or protecting them from malicious sites?
 For this step we will pretend  that girlsgeekout.org is a site that is known to have security flaws and hosts malware
-We dont want out employees to visit that site so we will put up a rule to prevent it
+We don't want our employees to visit that site so we will put up a rule to prevent it
 For this will we select TCP for our protocol and block the website “girlsgeekout” by its IP address (Obtained via NSlookup) 
 
 ## More Filtering
