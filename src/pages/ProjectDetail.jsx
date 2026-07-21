@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { projectsData } from '../data/api';
+import { projectsData, withBase } from '../data/api';
 import { Github, ExternalLink, FileText, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
                             remarkPlugins={[remarkGfm, remarkBreaks]}
                             rehypePlugins={[rehypeRaw]}
                         >
-                            {project.content}
+                            {withBase(project.content)}
                         </ReactMarkdown>
 
                         {project.tags && project.tags.includes('AI Enhanced') && project.aiEnhancements && (

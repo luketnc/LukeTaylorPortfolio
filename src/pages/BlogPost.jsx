@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { blogData } from '../data/api';
+import { blogData, withBase } from '../data/api';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
@@ -41,7 +41,7 @@ export default function BlogPost() {
                         remarkPlugins={[remarkGfm, remarkBreaks]} 
                         rehypePlugins={[rehypeRaw]}
                     >
-                        {post.content}
+                        {withBase(post.content)}
                     </ReactMarkdown>
                 </div>
             </article>

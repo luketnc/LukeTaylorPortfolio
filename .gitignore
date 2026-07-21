@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Camera originals. Web-safe .jpg versions are committed alongside these;
+# browsers can't render HEIC and .MOV is unreliable, so don't ship them.
+*.HEIC
+*.heic
+*.MOV
+*.mov
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

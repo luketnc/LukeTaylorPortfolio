@@ -14,7 +14,9 @@ I was having issues with the Noralsy access control system at my apartment compl
 
 ## Architecture
 
-![Architecture](img/architecture.png)
+<img src="/images/RFID/Screenshot%202026-07-21%20130351.png" alt="RFID signal analysis in Google Colab" style="width: 100%; border-radius: 8px;" />
+
+<img src="/images/RFID/Screenshot%202026-07-21%20130426.png" alt="RFID waveform and peak analysis" style="width: 100%; border-radius: 8px;" />
 
 
 

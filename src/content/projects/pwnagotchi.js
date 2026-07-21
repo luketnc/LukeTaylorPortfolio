@@ -122,6 +122,8 @@ No need to unzip your file just let the Imager in the next step handle that
 
 NOTE: Use Raspberry Pi Imager. I used Balenaetcher when I did it and kept getting bad writes for some reason so probably best to stick with what works
 
+<img src="/images/Pwnagotchi-Images/pi-imager.png" alt="Flashing Pwnagotchi OS with Raspberry Pi Imager" style="width: 100%; border-radius: 8px;" />
+
 ## Step 3: Configure config.toml
 
 Once it's flashed, before you eject the SD card, pop open the boot partition and set up your \`config.toml\`. This is where all your settings live (WiFi whitelist, display type, plugins, the AI section, etc). Two gotchas cost me a stupid amount of time here:
