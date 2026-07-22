@@ -393,6 +393,18 @@ button {
   background: var(--surface-hover);
 }
 
+/* Panoramic captures (waveforms, wide charts) get a two-column banner instead
+   of being cropped into a square. Breaks up the uniform grid on purpose. */
+@media (min-width: 800px) {
+  .project-card.is-wide {
+    grid-column: span 2;
+  }
+
+  .project-card.is-wide .project-card-media {
+    aspect-ratio: 4 / 1;
+  }
+}
+
 .project-card-media img {
   display: block;
   width: 100%;

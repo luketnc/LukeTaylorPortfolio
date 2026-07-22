@@ -9,6 +9,9 @@ export default {
     featured: true,
     image: "/images/RFID/Screenshot%202026-07-21%20130351.png",
     imageAlt: "RFID signal analysis showing phase shift keying and peak detection",
+    // Panoramic waveform capture, so let the card span two columns instead of
+    // cropping it into a square.
+    wide: true,
     content: `
 ## Project Overview
 

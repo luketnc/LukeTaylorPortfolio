@@ -23,8 +23,9 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Security analyst with a focus on breaking things to understand how they work.
-                        I dig into networks, build detection systems, and occasionally write about what I find.
+                        I'd rather build the thing than read about it. Hardware, wireless, and the
+                        occasional laptop two scans swore was clean. Everything here is what actually
+                        happened, including the parts where I was wrong.
                     </p>
                 </div>
             </section >
