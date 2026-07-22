@@ -56,15 +56,19 @@
   box-sizing: border-box;
 }
 
+/* Pooled overhead light lives on the root so it reads as the canvas, letting the
+   ray layer (body::before, z-index -1) sit above it but behind all content. */
 html {
   font-size: 17px;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(135% 95% at 50% -8%, #1a2217 0%, #10150f 46%, #0b0e0a 100%);
+  background-attachment: fixed;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -72,12 +76,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Pooled overhead light: a warm-green lift up top-center, darkening toward the
-   edges and bottom. Reads as a lit space rather than a flat fill. */
 body {
-  background-image: radial-gradient(135% 95% at 50% -8%, #1a2217 0%, #10150f 46%, #0b0e0a 100%);
-  background-attachment: fixed;
   min-height: 100vh;
+}
+
+/* Light shafts from the top: dust catching an overhead beam, not literal
+   underwater rays. Warm, in-palette, low opacity, irregular, and behind
+   everything so they never touch text legibility. */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80vh;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(26% 82% at 16% -8%, rgba(233, 225, 190, 0.06), transparent 68%),
+    radial-gradient(18% 60% at 37% -10%, rgba(233, 225, 190, 0.048), transparent 63%),
+    radial-gradient(33% 88% at 56% -6%, rgba(233, 225, 190, 0.055), transparent 70%),
+    radial-gradient(16% 54% at 78% -9%, rgba(233, 225, 190, 0.044), transparent 61%),
+    radial-gradient(23% 72% at 91% -7%, rgba(233, 225, 190, 0.04), transparent 65%);
 }
 
 /* Fine film grain over everything. No LLM ever adds this; it's the single
