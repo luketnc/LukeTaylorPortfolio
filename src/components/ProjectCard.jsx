@@ -2,6 +2,14 @@ import { Link } from 'react-router-dom';
 import { assetUrl } from '../data/api';
 
 export default function ProjectCard({ project }) {
+    // Track the cursor position as CSS vars so the ambient spotlight follows it.
+    const handlePointer = (e) => {
+        const el = e.currentTarget;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--spot-x', `${((e.clientX - r.left) / r.width) * 100}%`);
+        el.style.setProperty('--spot-y', `${((e.clientY - r.top) / r.height) * 100}%`);
+    };
+
     const statusColorMap = {
         Active: 'var(--status-active)',
         Staging: 'var(--status-staging)',
@@ -10,7 +18,10 @@ export default function ProjectCard({ project }) {
     };
 
     return (
-        <div className={`project-card ${project.image ? 'has-media' : ''} ${project.wide ? 'is-wide' : ''} ${project.size === 'feature' ? 'is-feature' : ''}`}>
+        <div
+            className={`project-card ${project.image ? 'has-media' : ''} ${project.wide ? 'is-wide' : ''} ${project.size === 'feature' ? 'is-feature' : ''}`}
+            onMouseMove={handlePointer}
+        >
             {project.image && (
                 <div className="project-card-media">
                     <img

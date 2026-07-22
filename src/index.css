@@ -72,6 +72,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Pooled overhead light: a warm-green lift up top-center, darkening toward the
+   edges and bottom. Reads as a lit space rather than a flat fill. */
+body {
+  background-image: radial-gradient(135% 95% at 50% -8%, #1a2217 0%, #10150f 46%, #0b0e0a 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Fine film grain over everything. No LLM ever adds this; it's the single
+   cheapest "a human touched this" signal. Kept very low opacity. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 h1,
 h2,
 h3,
@@ -396,6 +416,39 @@ button {
   border-color: var(--accent-color);
   background: var(--surface-hover);
   box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+/* Ambient brass spotlight that follows the cursor across the panel. The
+   --spot-x / --spot-y vars are set per-card in ProjectCard on mouse move.
+   Soft and off-center, not a hard circle. Gated on reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    background: radial-gradient(
+      220px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.13),
+      transparent 60%
+    );
+  }
+
+  .project-card:hover::after {
+    opacity: 1;
+  }
+
+  .project-card.is-feature::after {
+    background: radial-gradient(
+      340px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.16),
+      transparent 62%
+    );
+  }
 }
 
 .project-card-media {
