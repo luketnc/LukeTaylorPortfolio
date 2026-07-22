@@ -115,6 +115,45 @@ body::before {
   mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 98%);
 }
 
+/* Projects page: broad soft columns anchored at the top edge (wider up high,
+   tapering down), spanning most of the width. */
+body[data-route="projects"]::before {
+  background:
+    radial-gradient(52% 95% at 11% -3%, rgba(233, 225, 190, 0.05), transparent 60%),
+    radial-gradient(40% 72% at 33% -5%, rgba(233, 225, 190, 0.04), transparent 58%),
+    radial-gradient(62% 105% at 54% 0%, rgba(233, 225, 190, 0.055), transparent 63%),
+    radial-gradient(36% 68% at 75% -4%, rgba(233, 225, 190, 0.04), transparent 56%),
+    radial-gradient(48% 88% at 91% -2%, rgba(233, 225, 190, 0.045), transparent 61%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
+}
+
+/* Contact page: a pronounced conical fan radiating from center-above and
+   spreading out. Sparser page, so the rays can be more present. */
+body[data-route="contact"]::before {
+  background: conic-gradient(
+    from 0deg at 50% -20%,
+    transparent 142deg,
+    rgba(233, 225, 190, 0.065) 149deg,
+    transparent 155deg,
+    transparent 160deg,
+    rgba(233, 225, 190, 0.08) 165deg,
+    transparent 171deg,
+    transparent 175deg,
+    rgba(233, 225, 190, 0.085) 179deg,
+    transparent 184deg,
+    transparent 190deg,
+    rgba(233, 225, 190, 0.075) 196deg,
+    transparent 202deg,
+    transparent 209deg,
+    rgba(233, 225, 190, 0.06) 215deg,
+    transparent 222deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 96%);
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 96%);
+}
+
 /* Fine film grain over everything. No LLM ever adds this; it's the single
    cheapest "a human touched this" signal. Kept very low opacity. */
 body::after {
