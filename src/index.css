@@ -89,15 +89,32 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 80vh;
+  height: 125vh;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(26% 82% at 16% -8%, rgba(233, 225, 190, 0.06), transparent 68%),
-    radial-gradient(18% 60% at 37% -10%, rgba(233, 225, 190, 0.048), transparent 63%),
-    radial-gradient(33% 88% at 56% -6%, rgba(233, 225, 190, 0.055), transparent 70%),
-    radial-gradient(16% 54% at 78% -9%, rgba(233, 225, 190, 0.044), transparent 61%),
-    radial-gradient(23% 72% at 91% -7%, rgba(233, 225, 190, 0.04), transparent 65%);
+  /* Conic wedges radiating from a source above the top edge, so each ray is
+     narrow up top and widens as it falls, like light through water. */
+  background: conic-gradient(
+    from 0deg at 50% -22%,
+    transparent 143deg,
+    rgba(233, 225, 190, 0.05) 149deg,
+    transparent 154deg,
+    transparent 160deg,
+    rgba(233, 225, 190, 0.06) 165deg,
+    transparent 170deg,
+    transparent 175deg,
+    rgba(233, 225, 190, 0.065) 179deg,
+    transparent 184deg,
+    transparent 191deg,
+    rgba(233, 225, 190, 0.055) 196deg,
+    transparent 201deg,
+    transparent 210deg,
+    rgba(233, 225, 190, 0.045) 215deg,
+    transparent 221deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 48%, transparent 96%);
+  mask-image: linear-gradient(to bottom, black 0%, black 48%, transparent 96%);
 }
 
 /* Fine film grain over everything. No LLM ever adds this; it's the single
@@ -200,8 +217,6 @@ button {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--space-2);
 }
 
 /* -- Navbar -- */
