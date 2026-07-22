@@ -4,11 +4,14 @@ import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-    // Lead with featured work that has a photo, since the images are the proof.
+    // Lead with the feature card (the 2x2 hero), then photo'd work, then the rest.
+    // Placing the feature first keeps the grid from leaving a hole beside it.
+    const featureRank = p => (p.size === 'feature' ? 2 : 0) + (p.image ? 1 : 0);
     const featuredProjects = projectsData
         .filter(p => p.featured)
-        .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)))
-        .slice(0, 6);
+        .sort((a, b) => featureRank(b) - featureRank(a))
+        // 5 tiles cleanly: the 2x2 feature (4 cells) + the wide card (2) + 3 singles = 9 = 3 full rows.
+        .slice(0, 5);
     const latestPost = blogData[0];
 
     return (

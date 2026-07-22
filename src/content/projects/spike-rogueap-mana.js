@@ -8,7 +8,9 @@ export default {
     status: "Completed",
     featured: true,
     image: "/images/spike_rogueAP/IMG_0521.jpg",
-    imageAlt: "ESP32 rogue access point concealed inside a porcupine statue",
+    imageAlt: "ESP32 rogue access point concealed inside a porcupine statue with wires and glowing red LED eyes",
+    // Striking hero shot, so give it a 2x2 feature block on the grid.
+    size: "feature",
     content: `
 ## Overview
 This project involved the design and physical prototyping of a stealthy rogue Wi-Fi access point (AP) and micro-Command and Control (C2) node. Utilizing an ESP32 microcontroller concealed inside a small porcupine statue, the device serves as a physical red-teaming dropbox. By leveraging Evil Twin and rogue AP concepts (inspired by the MANA toolkit), the "porcupine" broadcasts a target SSID and forces connecting clients into a custom "Gnome Trap" captive portal. To merge offensive network capabilities with a physical hardware aesthetic, the statue was wired with pulsing LED eyes to indicate system status.

@@ -10,7 +10,7 @@ export default function ProjectCard({ project }) {
     };
 
     return (
-        <div className={`project-card ${project.image ? 'has-media' : ''} ${project.wide ? 'is-wide' : ''}`}>
+        <div className={`project-card ${project.image ? 'has-media' : ''} ${project.wide ? 'is-wide' : ''} ${project.size === 'feature' ? 'is-feature' : ''}`}>
             {project.image && (
                 <div className="project-card-media">
                     <img
