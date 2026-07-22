@@ -9,8 +9,9 @@ export default function Navbar() {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Tools', path: '/tools' },
+    // Hidden for now — not maintaining a separate blog or tools page. Projects is the blog.
+    // { name: 'Blog', path: '/blog' },
+    // { name: 'Tools', path: '/tools' },
   ];
 
   const isActive = (path) => {

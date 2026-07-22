@@ -1,6 +1,5 @@
-import { projectsData, blogData } from '../data/api';
+import { projectsData } from '../data/api';
 import ProjectCard from '../components/ProjectCard';
-import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
         .sort((a, b) => featureRank(b) - featureRank(a))
         // 5 tiles cleanly: the 2x2 feature (4 cells) + the wide card (2) + 3 singles = 9 = 3 full rows.
         .slice(0, 5);
-    const latestPost = blogData[0];
 
     return (
         <div className="home-page">
@@ -44,20 +42,7 @@ export default function Home() {
                 </div>
             </section >
 
-            {/* Latest Update */}
-            {
-                latestPost && (
-                    <section className="latest-update-section container section-padding">
-                        <div className="section-header">
-                            <h2>Latest Post</h2>
-                            <Link to="/blog" className="view-all-link">All Posts →</Link>
-                        </div>
-                        <div className="latest-update-card">
-                            <BlogPreview post={latestPost} />
-                        </div>
-                    </section>
-                )
-            }
+            {/* Latest Post section hidden while the blog is disabled. */}
         </div >
     );
 }

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function Footer() {
     return (
         <footer className="footer">
@@ -11,7 +9,6 @@ export default function Footer() {
                     <div className="footer-links">
                         <a href="https://github.com/luketnc" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="https://www.linkedin.com/in/luketaylorapp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <Link to="/blog">Blog</Link>
                     </div>
                 </div>
             </div>
