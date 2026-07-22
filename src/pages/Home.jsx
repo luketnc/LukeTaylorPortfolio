@@ -26,9 +26,7 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Hey! welcome to my blog where i share the ethical hacking and cyber security related projects I do in my free time.
-
-                        This is a WIP and is updated somewhat regulalrly, I hope you enjoy!
+                        Hey, I'm Luke. This is where I put the security stuff I actually build. Hardware, wireless, reverse engineering, whatever's caught my attention lately. Some of it's client work, some is just rabbit holes I've jumped down trying to widen my scope.
                     </p>
                 </div>
             </section >
