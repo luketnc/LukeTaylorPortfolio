@@ -26,9 +26,9 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        I'd rather build the thing than read about it. Hardware, wireless, and the
-                        occasional laptop two scans swore was clean. Everything here is what actually
-                        happened, including the parts where I was wrong.
+                        Hey! welcome to my blog where i share the ethical hacking and cyber security related projects I do in my free time.
+
+                        This is a WIP and is updated somewhat regulalrly, I hope you enjoy!
                     </p>
                 </div>
             </section >
