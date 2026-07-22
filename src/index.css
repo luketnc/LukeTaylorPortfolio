@@ -92,17 +92,27 @@ body::before {
   height: 125vh;
   z-index: -1;
   pointer-events: none;
-  /* Broad soft columns anchored at the top edge, so each is widest up high and
-     tapers as it falls. Wide, overlapping, and uneven so it reads as organic
-     light pooling in rather than defined beams. Very soft falloff keeps it subtle. */
-  background:
-    radial-gradient(52% 95% at 11% -3%, rgba(233, 225, 190, 0.05), transparent 60%),
-    radial-gradient(40% 72% at 33% -5%, rgba(233, 225, 190, 0.04), transparent 58%),
-    radial-gradient(62% 105% at 54% 0%, rgba(233, 225, 190, 0.055), transparent 63%),
-    radial-gradient(36% 68% at 75% -4%, rgba(233, 225, 190, 0.04), transparent 56%),
-    radial-gradient(48% 88% at 91% -2%, rgba(233, 225, 190, 0.045), transparent 61%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
-  mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
+  /* Directional light from an upper-right source, rays fanning down and to the
+     left. Wedges are wider and softer than sharp beams but still read as rays,
+     not a wash: the middle ground. */
+  background: conic-gradient(
+    from 0deg at 90% -12%,
+    transparent 182deg,
+    rgba(233, 225, 190, 0.05) 192deg,
+    transparent 201deg,
+    transparent 207deg,
+    rgba(233, 225, 190, 0.06) 216deg,
+    transparent 225deg,
+    transparent 231deg,
+    rgba(233, 225, 190, 0.055) 239deg,
+    transparent 248deg,
+    transparent 254deg,
+    rgba(233, 225, 190, 0.045) 261deg,
+    transparent 270deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 98%);
 }
 
 /* Fine film grain over everything. No LLM ever adds this; it's the single
