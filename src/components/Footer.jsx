@@ -7,7 +7,6 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} Luke Taylor
                     </p>
                     <div className="footer-links">
-                        <a href="https://github.com/luketnc" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="https://www.linkedin.com/in/luketaylorapp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
