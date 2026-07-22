@@ -7,6 +7,7 @@ export default {
     tags: ["Hardware / IoT", "Linux", "Network Recon", "Packet Analysis"],
     status: "Completed",
     featured: false,
+    tier: "real-world",
     image: "/images/wardriving/IMG_8695.jpg",
     imageAlt: "Headless wardriving rig with Raspberry Pi, GPS module, and high-gain Alfa adapter",
     content: `

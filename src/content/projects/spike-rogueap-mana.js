@@ -7,6 +7,7 @@ export default {
     tags: ["IoT", "ESP-32", "Rogue AP", "Offensive Security", "MANA"],
     status: "Completed",
     featured: true,
+    tier: "build",
     image: "/images/spike_rogueAP/IMG_0521.jpg",
     imageAlt: "ESP32 rogue access point concealed inside a porcupine statue with wires and glowing red LED eyes",
     // Striking hero shot, so give it a 2x2 feature block on the grid.

@@ -402,6 +402,63 @@ button {
   gap: var(--space-6);
 }
 
+.tier-section {
+  margin-top: var(--space-12);
+}
+
+.tier-section-head h2 {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-1);
+}
+
+.tier-section-blurb {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+}
+
+/* Labs collapse by default: the layout signals "practice" without any label. */
+.labs-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-8);
+}
+
+.labs-section summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-2) 0;
+}
+
+.labs-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.labs-section summary::before {
+  content: '▸';
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.labs-section[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.labs-summary-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.labs-summary-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .project-card {
   background: var(--surface-color);
   border: 1px solid var(--border-color);
@@ -432,9 +489,9 @@ button {
     opacity: 0;
     transition: opacity var(--transition-normal);
     background: radial-gradient(
-      460px circle at var(--spot-x, 50%) var(--spot-y, 0%),
-      rgba(200, 160, 44, 0.055),
-      transparent 74%
+      520px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.03),
+      transparent 80%
     );
   }
 
@@ -444,9 +501,9 @@ button {
 
   .project-card.is-feature::after {
     background: radial-gradient(
-      680px circle at var(--spot-x, 50%) var(--spot-y, 0%),
-      rgba(200, 160, 44, 0.065),
-      transparent 78%
+      760px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.035),
+      transparent 82%
     );
   }
 }
@@ -536,6 +593,53 @@ button {
   background: rgba(255, 255, 255, 0.05);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-full);
+}
+
+/* Row of signal chips above the title: tier (always) + optional depth + status. */
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  position: relative;
+  z-index: 3;
+}
+
+.tier-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+}
+
+.tier-real-world {
+  color: var(--accent-color);
+  background: rgba(200, 160, 44, 0.1);
+  border-color: rgba(200, 160, 44, 0.35);
+}
+
+.tier-build {
+  color: #a7b98a;
+  background: rgba(122, 154, 91, 0.12);
+  border-color: rgba(122, 154, 91, 0.35);
+}
+
+.tier-lab {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-color);
+}
+
+.depth-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
 }
 
 .project-oneliner {

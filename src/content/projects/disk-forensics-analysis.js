@@ -7,6 +7,8 @@ export default {
     tags: ["Digital Forensics", "Incident Response", "Volatility", "Autopsy", "Python"],
     status: "Completed",
     featured: true,
+    tier: "real-world",
+    deepDive: true,
     content: `
 ## The Premise
 

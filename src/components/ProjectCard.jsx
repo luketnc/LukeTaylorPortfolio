@@ -12,10 +12,15 @@ export default function ProjectCard({ project }) {
 
     const statusColorMap = {
         Active: 'var(--status-active)',
-        Staging: 'var(--status-staging)',
+        'Coming Soon': 'var(--status-staging)',
         Completed: 'var(--status-completed)',
         Archived: 'var(--status-archived)'
     };
+
+    const tierLabel = { 'real-world': 'Real-world', build: 'Build', lab: 'Lab' };
+
+    // "Completed" is the silent default; only surface a status chip when it says something.
+    const showStatus = project.status && project.status !== 'Completed';
 
     return (
         <div
@@ -31,16 +36,24 @@ export default function ProjectCard({ project }) {
                     />
                 </div>
             )}
+            <div className="project-badges">
+                {project.tier && (
+                    <span className={`tier-pill tier-${project.tier}`}>{tierLabel[project.tier]}</span>
+                )}
+                {project.deepDive && <span className="depth-badge">Deep dive</span>}
+                {showStatus && (
+                    <span
+                        className="project-status"
+                        style={{ '--status-color': statusColorMap[project.status] || 'var(--text-muted)' }}
+                    >
+                        {project.status}
+                    </span>
+                )}
+            </div>
             <div className="project-card-header">
                 <h3 className="project-title">
                     <Link to={`/projects/${project.slug}`}>{project.title}</Link>
                 </h3>
-                <span
-                    className="project-status"
-                    style={{ '--status-color': statusColorMap[project.status] || 'var(--text-muted)' }}
-                >
-                    {project.status}
-                </span>
             </div>
 
             <p className="project-oneliner">{project.oneLiner}</p>

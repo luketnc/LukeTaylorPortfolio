@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "Malware", "Post-Exploitation"],
     status: "Completed",
     featured: false,
+    tier: "build",
     content: `
 ## Overview
 

@@ -7,6 +7,7 @@ export default {
         tags: ["Vulnerability Scanning", "Firewall"],
         status: "Archived",
         featured: false,
+    tier: "lab",
         content: `
 ## Quick Overview of Network Attacks
 Network attacks are a broad category of cybersecurity attacks with many sub categories

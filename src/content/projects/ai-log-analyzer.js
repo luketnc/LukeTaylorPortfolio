@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "Machine Learning", "AI", "Incident Response", "SOC Automation", "AI Enhanced"],
     status: "Active",
     featured: false,
+    tier: "build",
     content: `
 ## Project Overview
 

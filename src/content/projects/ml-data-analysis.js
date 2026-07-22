@@ -7,6 +7,8 @@ export default {
     tags: ["Python", "Machine Learning", "Data Science", "Jupyter"],
     status: "Completed",
     featured: true,
+    tier: "lab",
+    deepDive: true,
     image: "/images/big-data-ml/image7.png",
     imageAlt: "Sentiment scores by laptop component from customer review analysis",
     content: `

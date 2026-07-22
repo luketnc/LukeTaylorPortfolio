@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "OSINT", "API Integration", "Attack Surface Management"],
     status: "Completed",
     featured: false,
+    tier: "real-world",
     content: `
 ## Overview
 

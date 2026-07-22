@@ -7,6 +7,7 @@ export default {
     tags: ["Incident Response", "Packet Analysis", "Malware Analysis"],
     status: "Archived",
     featured: false,
+    tier: "lab",
     content: `
 ## What Data is Captured in a PCAP File
 - PCAPS (or packet captures) are files that hold network traffic information. 
