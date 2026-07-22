@@ -3,7 +3,7 @@ export default {
         slug: "intrusion-detection-and-prevention",
         title: "Intrusion Detection and Prevention",
         oneLiner: "Lab that explains how to install and configure SNORT and how IPS/IDS works.",
-        category: "Test",
+        category: "Network Security",
         tags: ["Network Security", "IDS / IPS", "DevSecOps"],
         status: "Archived",
         featured: false,

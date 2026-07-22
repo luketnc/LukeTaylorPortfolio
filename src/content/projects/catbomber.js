@@ -3,7 +3,7 @@ export default {
     slug: "catbomber-network-analysis",
     title: "Catbomber Network Analysis",
     oneLiner: "Network analysis guide detailing detection and removal of a CATBOMBER virus.",
-    category: "Test",
+    category: "Incident Response",
     tags: ["Incident Response", "Packet Analysis", "Malware Analysis"],
     status: "Archived",
     featured: false,

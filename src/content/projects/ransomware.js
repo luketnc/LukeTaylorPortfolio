@@ -3,7 +3,7 @@ export default {
         slug: "ransomware-and-least-privilege",
         title: "Ransomware And Least Privilege",
         oneLiner: "Guide to how to prevent ransomware attacks using least privilege.",
-        category: "Test",
+        category: "Endpoint Security",
         tags: ["Malware Analysis", "Endpoint Security", "Incident Response"],
         status: "Archived",
         featured: false,

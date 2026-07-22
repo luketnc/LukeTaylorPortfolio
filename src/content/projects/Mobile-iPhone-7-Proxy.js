@@ -8,28 +8,18 @@ export default {
     status: "Completed",
     featured: true,
     content: `
+## Writeup coming soon
 
-
-
-
-
-    
-
-
+This project repurposed a jailbroken iPhone 7 as a self-hosted 4G mobile proxy with automated IP rotation. Leveraging the checkra1n jailbreak (checkm8 bootrom exploit), I gained root access to bind a proxy server to the cellular interface and wrote scripts to rotate the IP on demand via Airplane Mode toggling. Full writeup is in progress.
     `,
-    overview: "Creating a tool to reduce SOC alert fatigue using ML and LLMs.",
-    goal: "To automate the triage process of suspicious network logs.",
+    overview: "Repurposing a jailbroken iPhone 7 as a self-hosted 4G mobile proxy with automated IP rotation.",
+    goal: "To build a cost-effective mobile proxy node using deprecated consumer hardware and open-source networking tools.",
     features: [
-        "Unsupervised anomaly detection",
-        "Automated incident summarization",
-        "Reduction of false positives"
+        "checkra1n jailbreak via checkm8 bootrom exploit",
+        "Proxy server bound to the cellular interface (pdp_ip0)",
+        "Automated IP rotation via Airplane Mode toggling"
     ],
-    techStack: ["Python", "Scikit-Learn", "Prompt Engineering"],
+    techStack: ["checkra1n", "OpenSSH", "3proxy", "Bash"],
     results: "Work in progress.",
-    lessons: "TBA",
-    links: {
-        repo: "",
-        demo: "",
-        writeup: ""
-    }
+    lessons: "TBA"
 };
