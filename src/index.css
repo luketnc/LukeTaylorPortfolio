@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
 
 :root {
-  /* Brand & Neutrals - Deep Navy */
-  --bg-color: #0b1121;
-  --surface-color: #111a2e;
-  --surface-hover: #182338;
-  --border-color: #243044;
+  /* Base - Field Olive. Warm, desaturated green-black. Deliberately not the
+     navy/cyan or neon "matrix" green that every security site defaults to. */
+  --bg-color: #10150f;
+  --surface-color: #171e15;
+  --surface-hover: #1f2a1c;
+  --border-color: #2c3a28;
 
-  --text-primary: #e1e7ef;
-  --text-secondary: #8892a4;
-  --text-muted: #5b6578;
+  --text-primary: #e6e4da;
+  --text-secondary: #9aa391;
+  --text-muted: #6b7566;
 
-  /* Accents - Steel Teal */
-  --accent-color: #4dabcf;
-  --accent-hover: #6bc0e0;
-  --accent-text: #6bc0e0;
-  --accent-glow: rgba(77, 171, 207, 0.12);
+  /* Accent - Brass. Warm metal against olive, like field equipment. */
+  --accent-color: #c8a02c;
+  --accent-hover: #e0b94a;
+  --accent-text: #d4ae3c;
+  --accent-glow: rgba(200, 160, 44, 0.14);
 
-  --status-active: #4dabcf;
-  --status-staging: #e0a45e;
-  --status-completed: #7c8ef2;
-  --status-archived: #5b6578;
+  --status-active: #c8a02c;
+  --status-staging: #b5763a;
+  --status-completed: #7a9a5b;
+  --status-archived: #6b7566;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -53,6 +54,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
 }
 
 html,
@@ -104,9 +109,9 @@ ol {
 /* Utilities */
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-8);
 }
 
 .visually-hidden {
@@ -162,7 +167,7 @@ button {
 /* -- Navbar -- */
 .navbar {
   border-bottom: 1px solid var(--border-color);
-  background: rgba(11, 17, 33, 0.85);
+  background: rgba(16, 21, 15, 0.85);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -360,7 +365,7 @@ button {
 /* -- Project Cards -- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--space-6);
 }
 
@@ -565,22 +570,22 @@ button {
 
 /* AI Enhanced Tag Styles */
 .tag.ai-enhanced-tag {
-  color: #e5c07b;
-  border-color: rgba(210, 153, 34, 0.4);
-  background: rgba(210, 153, 34, 0.1);
+  color: #cf7d4a;
+  border-color: rgba(207, 125, 74, 0.4);
+  background: rgba(207, 125, 74, 0.1);
 }
 
 .filter-btn.ai-enhanced-tag {
-  color: #e5c07b;
-  border-color: rgba(210, 153, 34, 0.4);
+  color: #cf7d4a;
+  border-color: rgba(207, 125, 74, 0.4);
 }
 
 .filter-btn.ai-enhanced-tag:hover,
 .filter-btn.ai-enhanced-tag.active {
-  background: rgba(210, 153, 34, 0.15);
-  border-color: #e5c07b;
-  color: #e5c07b;
-  box-shadow: 0 4px 12px rgba(210, 153, 34, 0.15);
+  background: rgba(207, 125, 74, 0.15);
+  border-color: #cf7d4a;
+  color: #cf7d4a;
+  box-shadow: 0 4px 12px rgba(207, 125, 74, 0.15);
 }
 
 .page-header {
@@ -828,9 +833,9 @@ button {
 }
 
 .alert-box.warning {
-  background: rgba(210, 153, 34, 0.1);
-  border: 1px solid rgba(210, 153, 34, 0.4);
-  color: #e5c07b;
+  background: rgba(207, 125, 74, 0.1);
+  border: 1px solid rgba(207, 125, 74, 0.4);
+  color: #cf7d4a;
 }
 
 .alert-icon {
@@ -1031,8 +1036,8 @@ button {
 }
 
 .form-success {
-  background: rgba(77, 171, 207, 0.1);
-  border: 1px solid rgba(77, 171, 207, 0.3);
+  background: rgba(122, 154, 91, 0.1);
+  border: 1px solid rgba(122, 154, 91, 0.3);
   padding: var(--space-6);
   border-radius: var(--radius-md);
   text-align: center;
@@ -1046,7 +1051,7 @@ button {
 /* -- Tools Page -- */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--space-6);
 }
 
@@ -1087,7 +1092,7 @@ button {
 .tool-badge {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  background: rgba(11, 17, 33, 0.5);
+  background: rgba(11, 15, 10, 0.5);
   border: 1px solid var(--border-color);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
@@ -1219,7 +1224,7 @@ button {
 }
 
 .markdown-body pre {
-  background: #0a0f1a;
+  background: #0b0f0a;
   border: 1px solid var(--border-color);
   padding: var(--space-4);
   border-radius: var(--radius-md);
