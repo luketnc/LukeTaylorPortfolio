@@ -4,7 +4,11 @@ import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-    const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3);
+    // Lead with featured work that has a photo, since the images are the proof.
+    const featuredProjects = projectsData
+        .filter(p => p.featured)
+        .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)))
+        .slice(0, 6);
     const latestPost = blogData[0];
 
     return (

@@ -7,6 +7,8 @@ export default {
     tags: ["Noralsy", "Access Control", "RFID", "Google Colab", "Physical Security"],
     status: "Completed",
     featured: true,
+    image: "/images/RFID/Screenshot%202026-07-21%20130351.png",
+    imageAlt: "RFID signal analysis showing phase shift keying and peak detection",
     content: `
 ## Project Overview
 

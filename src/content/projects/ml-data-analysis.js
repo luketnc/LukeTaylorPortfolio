@@ -7,6 +7,8 @@ export default {
     tags: ["Python", "Machine Learning", "Data Science", "Jupyter"],
     status: "Completed",
     featured: true,
+    image: "/images/big-data-ml/image7.png",
+    imageAlt: "Sentiment scores by laptop component from customer review analysis",
     content: `
 ## An AI-Powered Analysis and Prediction of Laptop Sales: Insights for Strategic Business Decisions
 

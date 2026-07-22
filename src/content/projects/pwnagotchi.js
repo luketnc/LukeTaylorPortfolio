@@ -7,6 +7,8 @@ export default {
   tags: ["Hardware / IoT", "Linux", "Network Security", "AI"],
   status: "Archived",
   featured: true,
+  image: "/images/Pwnagotchi-Images/battery-pins.png",
+  imageAlt: "Pwnagotchi hardware showing the PiSugar battery and header pins",
   overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",
   goal: "To understand the basics of sniffing handshakes and configuring a pi zero w",
   features: [

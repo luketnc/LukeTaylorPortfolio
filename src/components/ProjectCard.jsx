@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { assetUrl } from '../data/api';
 
 export default function ProjectCard({ project }) {
     const statusColorMap = {
@@ -9,7 +10,16 @@ export default function ProjectCard({ project }) {
     };
 
     return (
-        <div className="project-card">
+        <div className={`project-card ${project.image ? 'has-media' : ''}`}>
+            {project.image && (
+                <div className="project-card-media">
+                    <img
+                        src={assetUrl(project.image)}
+                        alt={project.imageAlt || project.title}
+                        loading="lazy"
+                    />
+                </div>
+            )}
             <div className="project-card-header">
                 <h3 className="project-title">
                     <Link to={`/projects/${project.slug}`}>{project.title}</Link>

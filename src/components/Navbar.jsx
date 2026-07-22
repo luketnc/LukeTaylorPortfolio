@@ -20,9 +20,9 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="container nav-container">
-        <Link to="/" className="brand">
-          <span className="brand-text">Luke Taylor</span>
+      <div className="nav-container">
+        <Link to="/" className="brand" aria-label="Home">
+          <span className="brand-mark">~/</span>
         </Link>
         
         {/* Desktop Nav */}
