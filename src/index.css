@@ -432,9 +432,9 @@ button {
     opacity: 0;
     transition: opacity var(--transition-normal);
     background: radial-gradient(
-      220px circle at var(--spot-x, 50%) var(--spot-y, 0%),
-      rgba(200, 160, 44, 0.13),
-      transparent 60%
+      460px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.055),
+      transparent 74%
     );
   }
 
@@ -444,9 +444,9 @@ button {
 
   .project-card.is-feature::after {
     background: radial-gradient(
-      340px circle at var(--spot-x, 50%) var(--spot-y, 0%),
-      rgba(200, 160, 44, 0.16),
-      transparent 62%
+      680px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.065),
+      transparent 78%
     );
   }
 }

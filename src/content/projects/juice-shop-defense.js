@@ -7,6 +7,8 @@ export default {
     tags: ["Web Security", "OWASP", "Defensive Security", "AppSec"],
     status: "Completed",
     featured: false,
+    image: "/images/juice%20defense%20panel/Screenshot%202026-07-22%20at%2001-12-02%20frontend.png",
+    imageAlt: "Juice Shop defense monitoring panel frontend",
     content: `
 ## Overview
 

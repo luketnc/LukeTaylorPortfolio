@@ -7,6 +7,8 @@ export default {
     tags: ["Mobile Security", "Burp Suite", "Certificate Pinning", "iOS", "API"],
     status: "Active",
     featured: false,
+    image: "/images/mobile-iphone7-proxy/IMG_0220.jpg",
+    imageAlt: "Jailbroken iPhone 7 wired up for traffic interception",
     content: `
 ## Writeup coming soon
 

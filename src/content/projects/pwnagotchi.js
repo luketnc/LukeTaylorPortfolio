@@ -7,8 +7,8 @@ export default {
   tags: ["Hardware / IoT", "Linux", "Network Security", "AI"],
   status: "Archived",
   featured: true,
-  image: "/images/Pwnagotchi-Images/battery-pins.png",
-  imageAlt: "Pwnagotchi hardware showing the PiSugar battery and header pins",
+  image: "/images/Pwnagotchi-Images/finishedpwn.jpg",
+  imageAlt: "Finished Pwnagotchi running, e-ink display showing 12 handshakes captured and the AI indicator active",
   overview: "Built a Pwnagotchi to learn about hardware, wifi, and AI.",
   goal: "To understand the basics of sniffing handshakes and configuring a pi zero w",
   features: [
@@ -70,7 +70,9 @@ You probably already know this but you can actually buy the Pi 0 W (And most dev
 
 Anyways I digress, this was my soldering setup:
 
-<img src="/images/Pwnagotchi-Images/solder-setup.png" alt="Sample code image" style="width: 100%; border-radius: 8px;" />
+<img src="/images/Pwnagotchi-Images/solder-setup.png" alt="Soldering station set up with iron, solder, and the Pi Zero W" style="width: 100%; border-radius: 8px;" />
+
+<img src="/images/Pwnagotchi-Images/IMG_8697.JPG" alt="Workbench mid-build: soldering iron, jumper wires, and the Pi Zero under a magnifier lamp" style="width: 100%; border-radius: 8px;" />
 
 
 I didn't have flux paste or a desolder pump (and I didnt have a small enough tip) which made my experience pretty taxing. The iron I recommended at the top has these things and no extra bullshit.
