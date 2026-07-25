@@ -10,21 +10,22 @@ export default {
     content: `
 ## Project Overview
 
-I was having issues with the Noralsy access control system at my apartment complex, so I decided to do some research and figure out if there was a way to get around it. I ended up finding a way to clone the RFID tags using a Flipper 0 and Google Colab. Here is some more information about the project:
+I was having issues with the Noralsy access control system at my apartment complex, so I decided to do some research and figure out if there was a way to get around it. I ended up finding a way to clone the RFID tags using a Flipper 0 and Google Colab. I have not finished the write up yet but I have some photos of the process until I am done. This was a time consuiming project that required patching esxisiting tools and a whole lot of re writing tags.
 
 ## Architecture
 
 <img src="/images/RFID/Screenshot%202026-07-21%20130351.png" alt="RFID signal analysis in Google Colab" style="width: 100%; border-radius: 8px;" />
 
-<img src="/images/RFID/Screenshot%202026-07-21%20130426.png" alt="RFID waveform and peak analysis" style="width: 100%; border-radius: 8px;" />
 
 
 
 ## Results
 
 
+<img src="/images/RFID/Screenshot%202026-07-21%20130426.png" alt="RFID waveform and peak analysis" style="width: 100%; border-radius: 8px;" />
 
 ## Lessons
+
 
 
     `,
