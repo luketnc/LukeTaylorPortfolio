@@ -9,6 +9,8 @@ export default {
     featured: true,
     tier: "real-world",
     deepDive: true,
+    image: "/images/takingapaaartcs2cheat/capa.png",
+    imageAlt: "capa output showing the cheat's capabilities, including CRC32 hashing and keylogging, mapped to ATT&CK and MBC",
     content: `
 I love Counter-Strike, and I want to spend my career making it harder to cheat at. So I decided the best way to prove that to myself, and to the people I'm hoping to work for, was to stop talking about cheats and start taking one apart.
 
@@ -20,6 +22,8 @@ If you want to build anticheat, you need a working mental model of the thing you
 
 I picked this particular EZfrags revival deliberately. It's free, which makes it easy to obtain and analyze, and it advertises itself as a CS2 build while openly disclaiming any connection to the original CSGO cheat. A free cheat from a sketchy source is also a great excuse to practice the other half of this discipline: not getting owned by your own sample.
 
+<img src="/images/takingapaaartcs2cheat/ezfragssite.png" alt="The ezfrags revival download site advertising a supposedly undetected CS2 build" style="width: 100%; border-radius: 8px;" />
+
 ## Detonating safely
 
 The binary came from ezfrags[.]online, a domain registered in late 2024 behind a Namecheap privacy service, so no useful OSINT there. My working assumption was that this was, at worst, a low-effort trojaned fork rather than a targeted threat, so I calibrated my environment accordingly: a fresh Windows ISO in VirtualBox, Defender disabled via group policy (so it wouldn't quarantine my sample mid-analysis), the FLARE reverse-engineering toolkit installed, and then the machine sealed off, with host-only networking disabled, clipboard sharing off, and snapshots taken before and after each stage.
@@ -30,13 +34,19 @@ The threat model in my head was simple: I wasn't willing to gamble my credential
 
 Static triage told the story quickly. CFF Explorer showed a native x64 C++ binary, compiled with Visual Studio 2022 just two days before I grabbed it, entry point landing cleanly in .text, and virtual size matching raw size: none of the hallmarks of a packer. Detect It Easy and a clean FLOSS string dump agreed: unpacked, unobfuscated at the file level, with a leftover PDB path (\`D:\\Sources\\EzFrags\\CS2_External-master\\x64\\Release\\Ezfrags.pdb\`) that all but confirms it was built from a public "CS2 External" ESP framework.
 
+<img src="/images/takingapaaartcs2cheat/machinetype64.png" alt="CFF Explorer confirming a native x64 binary compiled with Visual Studio 2022" style="width: 100%; border-radius: 8px;" />
+
 The imports drew the shape of the thing. Fifty-one from kernel32, forty-one from user32, one from shell32, and among them \`OpenProcess\`, \`ReadProcessMemory\`, and \`WriteProcessMemory\`, with no \`VirtualAllocEx\`. That's the signature of an external cheat: it runs as its own process, uses Toolhelp32 to find cs2.exe, locates the module base, and reads and writes game memory from the outside rather than injecting code into the game. In ring terms (ring 0 is the kernel, rings 1 and 2 the historical driver space, ring 3 user applications) this thing lives entirely in ring 3. capa filled in the rest: an ImGui/DX11 overlay drawing ESP, keystroke logging for hotkey toggles, clipboard use for sharing configs, application and process discovery (I'd already seen cs2 in the strings), and, notably, zero network socket capabilities.
+
+<img src="/images/takingapaaartcs2cheat/imports.png" alt="Import table showing OpenProcess, ReadProcessMemory, and WriteProcessMemory with no VirtualAllocEx" style="width: 100%; border-radius: 8px;" />
 
 ## The most interesting find
 
 The part I'm proudest of started as a hunch about the imports and turned into the technical centerpiece of the whole project.
 
 capa flagged four capabilities that, taken together, meant more than the sum of their parts: hashing data with CRC32, resolving functions by parsing PE exports, enumerating PE sections, and parsing PE headers. That combination is a well-known technique used by both cheats and malware: instead of importing functions by name (which would show up in the import table and in a string dump), the program keeps a table of CRC32 hashes of the API names it wants, then at runtime walks a DLL's export table, hashes each export, and matches against its table. The function gets called with its name appearing nowhere in the binary.
+
+<img src="/images/takingapaaartcs2cheat/capa.png" alt="capa flagging CRC32 hashing alongside PE export and section parsing, the fingerprint of hash-based import resolution" style="width: 100%; border-radius: 8px;" />
 
 The reason this mattered for my investigation is precise: static analysis alone could no longer prove the cheat doesn't touch the network. The imports I could read were only the honest ones. If networking APIs were being resolved by hash, they'd be invisible to CFF Explorer and FLOSS both. This was the gap I had to close before I could say anything confident about whether the sample was ratted.
 
@@ -50,11 +60,17 @@ Here's the detection-side irony, though, and it's the kind of thing I want to be
 
 To close the CRC32 gap I moved to dynamic analysis. I set up a decoy cs2.exe (a renamed Notepad++, betting the cheat only string-matches the process name, which it did), ran FakeNet-NG to capture any outbound traffic, filtered Procmon across the process tree, and set breakpoints in x64dbg at the real chokepoint: \`ntdll!LdrLoadDll\`, plus \`CreateProcessW\`, \`NtCreateUserProcess\`, and \`ShellExecuteW\` for good measure.
 
+<img src="/images/takingapaaartcs2cheat/x64dbgbreakdowndlllview.png" alt="x64dbg stopped at a breakpoint on ntdll!LdrLoadDll, watching every module load" style="width: 100%; border-radius: 8px;" />
+
 The logic behind LdrLoadDll is the interesting bit. CRC32 hashing lets the cheat resolve a function from a DLL that's already loaded without ever calling GetProcAddress by name, but it cannot conjure a module that isn't mapped. The networking DLLs (ws2_32, wininet, winhttp, wsock32, urlmon) aren't loaded by default, so any attempt to reach the network has to pass through a DLL load first. Breaking on LdrLoadDll turns that into a single, unmissable chokepoint. Nothing network-related ever loaded. FakeNet stayed silent. Procmon showed no beacon.
+
+<img src="/images/takingapaaartcs2cheat/fakenetsimevidense.png" alt="FakeNet-NG capturing no outbound network traffic during the run" style="width: 100%; border-radius: 8px;" />
 
 ## Ghidra: confirming the boring truth
 
 With the network question mostly settled, I moved to Ghidra to understand the cheat rather than fear it. Following the CRT math imports (\`atan2f\`, \`acosf\`, \`powf\`) led straight to the aimbot: it reads an enemy's coordinates out of game memory, uses trigonometry to compute the angle from the player's current view to a target point on the enemy model (head for rage, body for legit), and translates that into synthetic mouse input to drag the crosshair onto the target. Recognizing that math in stripped, unnamed functions is a skill I'm still building, but the shape was unmistakable once I knew what library to follow.
+
+<img src="/images/takingapaaartcs2cheat/decompiledaimbotcode.png" alt="Ghidra decompiling the CRT trig import atan2f, the thread that led to the aimbot" style="width: 100%; border-radius: 8px;" />
 
 I also chased down the one string that had been bothering me. My notes flagged a \`system()\` call as "need to check what this runs," and a system() in a cheat is exactly the kind of thing that should make you nervous. It was referenced twice in the decompilation, and on inspection both were \`system("cls")\`: clearing the console window for a cosmetic menu redraw. Anticlimactic, and a good reminder that the scary-looking import is often nothing, but you don't get to assume that, you go read it.
 
