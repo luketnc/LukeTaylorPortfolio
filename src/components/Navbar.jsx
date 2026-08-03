@@ -22,9 +22,6 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-container">
-        <Link to="/" className="brand" aria-label="Home">
-          <span className="brand-mark">~/</span>
-        </Link>
         
         {/* Desktop Nav */}
         <nav className="nav-links desktop-nav">
