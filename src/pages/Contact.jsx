@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -17,9 +17,6 @@ export default function Contact() {
                     <div className="social-links">
                         <a href="mailto:luketnc@gmail.com" className="social-link">
                             <Mail size={20} /> luketnc@gmail.com
-                        </a>
-                        <a href="https://github.com/luketnc" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <Github size={20} /> github.com/luketnc
                         </a>
                         <a href="https://www.linkedin.com/in/luketaylorapp/" target="_blank" rel="noopener noreferrer" className="social-link">
                             <Linkedin size={20} /> linkedin.com/in/luketaylorapp

@@ -7,6 +7,7 @@ export default {
     tags: ["Malware Analysis", "Offensive Security", "Phishing", "Payload Delivery"],
     status: "Active",
     featured: false,
+    tier: "build",
     content: `
 ## Project Overview
 

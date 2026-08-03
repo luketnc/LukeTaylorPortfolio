@@ -5,8 +5,9 @@ export default {
     oneLiner: "A lightweight Command and Control (C2) server and implant framework.",
     category: "Malware Development",
     tags: ["Red Teaming", "C2", "Post-Exploitation", "Python"],
-    status: "Archived",
+    status: "Coming Soon",
     featured: false,
+    tier: "build",
     content: `
 ## Writeup coming soon
 

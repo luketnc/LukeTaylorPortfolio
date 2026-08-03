@@ -7,6 +7,7 @@ export default {
         tags: ["Malware Analysis", "Endpoint Security", "Incident Response"],
         status: "Archived",
         featured: false,
+    tier: "lab",
         content: `
 ## Least Privilege
 Least privilege (POLP) is the idea that user access needs to be limited to only allows users to access what's necessary for their job

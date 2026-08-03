@@ -15,6 +15,11 @@ import { toolsData as rawTools } from '../content/tools/index.js';
 export const blogData = rawBlog;
 export const toolsData = rawTools;
 
+// Resolve a root-absolute asset path against the build's base URL, so images work
+// both locally and under the GitHub Pages subpath.
+export const assetUrl = (path = '') =>
+    path.startsWith('/') ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
+
 // Content is authored with root-absolute /images/... paths, but the site is served
 // from a subpath on GitHub Pages. Vite only rewrites assets it processes, not raw
 // strings in content, so prefix them with the build's base URL at render time.

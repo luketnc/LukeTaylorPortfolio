@@ -1,11 +1,16 @@
-import { projectsData, blogData } from '../data/api';
+import { projectsData } from '../data/api';
 import ProjectCard from '../components/ProjectCard';
-import BlogPreview from '../components/BlogPreview';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-    const featuredProjects = projectsData.filter(p => p.featured).slice(0, 3);
-    const latestPost = blogData[0];
+    // Lead with the feature card (the 2x2 hero), then photo'd work, then the rest.
+    // Placing the feature first keeps the grid from leaving a hole beside it.
+    const featureRank = p => (p.size === 'feature' ? 2 : 0) + (p.image ? 1 : 0);
+    const featuredProjects = projectsData
+        .filter(p => p.featured)
+        .sort((a, b) => featureRank(b) - featureRank(a))
+        // 5 tiles cleanly: the 2x2 feature (4 cells) + the wide card (2) + 3 singles = 9 = 3 full rows.
+        .slice(0, 5);
 
     return (
         <div className="home-page">
@@ -19,8 +24,7 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Security analyst with a focus on breaking things to understand how they work.
-                        I dig into networks, build detection systems, and occasionally write about what I find.
+                        Hey, I'm Luke. This is where I put the security stuff I actually build. Hardware, wireless, reverse engineering, whatever's caught my attention lately. Some of it's client work, some is just rabbit holes I've jumped down trying to widen my scope.
                     </p>
                 </div>
             </section >
@@ -38,20 +42,7 @@ export default function Home() {
                 </div>
             </section >
 
-            {/* Latest Update */}
-            {
-                latestPost && (
-                    <section className="latest-update-section container section-padding">
-                        <div className="section-header">
-                            <h2>Latest Post</h2>
-                            <Link to="/blog" className="view-all-link">All Posts →</Link>
-                        </div>
-                        <div className="latest-update-card">
-                            <BlogPreview post={latestPost} />
-                        </div>
-                    </section>
-                )
-            }
+            {/* Latest Post section hidden while the blog is disabled. */}
         </div >
     );
 }

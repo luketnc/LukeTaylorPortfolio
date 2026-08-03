@@ -7,6 +7,7 @@ export default {
     tags: ["Kali Nethunter", "OnePlus 6T", "Penetration Testing", "Linux"],
     status: "Completed",
     featured: true,
+    tier: "build",
     content: `
 ## Overview
 The goal of this project was to engineer a highly portable, stealthy offensive security and wireless auditing platform by repurposing a carrier-branded OnePlus 6T. This required low-level hardware flashing to convert the device to an international variant using the MSMDownloadTool in Emergency Download (EDL) mode, followed by provisioning the phone with bare-metal Kali NetHunter Pro. The resulting platform serves as a dedicated environment for mobile security testing, digital forensics (using tools like Autopsy), and wireless network auditing (utilizing Kismet, Airodump-ng, and Reaver).

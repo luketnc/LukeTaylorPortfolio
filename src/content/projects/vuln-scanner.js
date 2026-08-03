@@ -7,6 +7,7 @@ export default {
     tags: ["Golang", "Concurrency", "DevSecOps", "Vulnerability Management"],
     status: "Active",
     featured: true,
+    tier: "build",
     overview: "Built a lightweight vulnerability scanner to check local container images for known CVEs.",
     goal: "To understand concurrent programming in Go while reinforcing knowledge of CVE databases.",
     features: [

@@ -9,8 +9,9 @@ export default function Navbar() {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Tools', path: '/tools' },
+    // Hidden for now — not maintaining a separate blog or tools page. Projects is the blog.
+    // { name: 'Blog', path: '/blog' },
+    // { name: 'Tools', path: '/tools' },
   ];
 
   const isActive = (path) => {
@@ -20,9 +21,9 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="container nav-container">
-        <Link to="/" className="brand">
-          <span className="brand-text">Luke Taylor</span>
+      <div className="nav-container">
+        <Link to="/" className="brand" aria-label="Home">
+          <span className="brand-mark">~/</span>
         </Link>
         
         {/* Desktop Nav */}

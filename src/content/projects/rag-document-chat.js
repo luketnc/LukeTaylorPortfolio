@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "AI", "LLMs & RAG", "Backend Engineering"],
     status: "Active",
     featured: false,
+    tier: "build",
     content: `
 ## Project Overview
 

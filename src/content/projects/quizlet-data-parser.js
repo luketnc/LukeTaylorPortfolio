@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "Data Parsing", "Automation", "ETL", "AI Enhanced"],
     status: "Completed",
     featured: false,
+    tier: "build",
     content: `
 ## Overview
 

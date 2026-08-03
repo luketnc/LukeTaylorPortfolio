@@ -7,6 +7,7 @@ export default {
     tags: ["Wireless Security", "WPA2", "Cryptography", "Network Recon"],
     status: "Active",
     featured: false,
+    tier: "lab",
     content: `
 ## Project Staging Overview
 

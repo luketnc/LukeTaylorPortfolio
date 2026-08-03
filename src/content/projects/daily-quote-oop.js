@@ -7,6 +7,7 @@ export default {
     tags: ["Python", "OOP", "APIs"],
     status: "Completed",
     featured: false,
+    tier: "lab",
     content: `
 ## Overview
 

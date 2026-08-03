@@ -7,6 +7,7 @@ export default {
         tags: ["Vulnerability Scanning", "Firewall"],
         status: "Archived",
         featured: false,
+    tier: "lab",
         content: `
 ## Writeup coming soon
 

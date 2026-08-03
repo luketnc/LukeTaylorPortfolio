@@ -7,6 +7,7 @@ export default {
         tags: ["Network Security", "IDS / IPS", "DevSecOps"],
         status: "Archived",
         featured: false,
+    tier: "lab",
         content: `
 ## Why is Intrusion Detection and Prevention Important?
 

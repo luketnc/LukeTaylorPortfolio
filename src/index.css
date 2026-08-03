@@ -1,30 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Brand & Neutrals - Deep Navy */
-  --bg-color: #0b1121;
-  --surface-color: #111a2e;
-  --surface-hover: #182338;
-  --border-color: #243044;
+  /* Base - Field Olive. Warm, desaturated green-black. Deliberately not the
+     navy/cyan or neon "matrix" green that every security site defaults to. */
+  --bg-color: #10150f;
+  --surface-color: #171e15;
+  --surface-hover: #1f2a1c;
+  --border-color: #2c3a28;
 
-  --text-primary: #e1e7ef;
-  --text-secondary: #8892a4;
-  --text-muted: #5b6578;
+  --text-primary: #e6e4da;
+  --text-secondary: #9aa391;
+  --text-muted: #6b7566;
 
-  /* Accents - Steel Teal */
-  --accent-color: #4dabcf;
-  --accent-hover: #6bc0e0;
-  --accent-text: #6bc0e0;
-  --accent-glow: rgba(77, 171, 207, 0.12);
+  /* Accent - Brass. Warm metal against olive, like field equipment. */
+  --accent-color: #c8a02c;
+  --accent-hover: #e0b94a;
+  --accent-text: #d4ae3c;
+  --accent-glow: rgba(200, 160, 44, 0.14);
 
-  --status-active: #4dabcf;
-  --status-staging: #e0a45e;
-  --status-completed: #7c8ef2;
-  --status-archived: #5b6578;
+  --status-active: #c8a02c;
+  --status-staging: #b5763a;
+  --status-completed: #7a9a5b;
+  --status-archived: #6b7566;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Spacing */
@@ -55,16 +56,114 @@
   box-sizing: border-box;
 }
 
+/* Pooled overhead light lives on the root so it reads as the canvas, letting the
+   ray layer (body::before, z-index -1) sit above it but behind all content. */
+html {
+  font-size: 17px;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(135% 95% at 50% -8%, #1a2217 0%, #10150f 46%, #0b0e0a 100%);
+  background-attachment: fixed;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Light shafts from the top: dust catching an overhead beam, not literal
+   underwater rays. Warm, in-palette, low opacity, irregular, and behind
+   everything so they never touch text legibility. */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 125vh;
+  z-index: -1;
+  pointer-events: none;
+  /* Directional light from an upper-right source, rays fanning down and to the
+     left. Wedges are wider and softer than sharp beams but still read as rays,
+     not a wash: the middle ground. */
+  background: conic-gradient(
+    from 0deg at 90% -12%,
+    transparent 182deg,
+    rgba(233, 225, 190, 0.05) 192deg,
+    transparent 201deg,
+    transparent 207deg,
+    rgba(233, 225, 190, 0.06) 216deg,
+    transparent 225deg,
+    transparent 231deg,
+    rgba(233, 225, 190, 0.055) 239deg,
+    transparent 248deg,
+    transparent 254deg,
+    rgba(233, 225, 190, 0.045) 261deg,
+    transparent 270deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 98%);
+}
+
+/* Projects page: broad soft columns anchored at the top edge (wider up high,
+   tapering down), spanning most of the width. */
+body[data-route="projects"]::before {
+  background:
+    radial-gradient(52% 95% at 11% -3%, rgba(233, 225, 190, 0.05), transparent 60%),
+    radial-gradient(40% 72% at 33% -5%, rgba(233, 225, 190, 0.04), transparent 58%),
+    radial-gradient(62% 105% at 54% 0%, rgba(233, 225, 190, 0.055), transparent 63%),
+    radial-gradient(36% 68% at 75% -4%, rgba(233, 225, 190, 0.04), transparent 56%),
+    radial-gradient(48% 88% at 91% -2%, rgba(233, 225, 190, 0.045), transparent 61%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 0%, black 42%, transparent 98%);
+}
+
+/* Contact page: a pronounced conical fan radiating from center-above and
+   spreading out. Sparser page, so the rays can be more present. */
+body[data-route="contact"]::before {
+  background: conic-gradient(
+    from 0deg at 50% -20%,
+    transparent 142deg,
+    rgba(233, 225, 190, 0.065) 149deg,
+    transparent 155deg,
+    transparent 160deg,
+    rgba(233, 225, 190, 0.08) 165deg,
+    transparent 171deg,
+    transparent 175deg,
+    rgba(233, 225, 190, 0.085) 179deg,
+    transparent 184deg,
+    transparent 190deg,
+    rgba(233, 225, 190, 0.075) 196deg,
+    transparent 202deg,
+    transparent 209deg,
+    rgba(233, 225, 190, 0.06) 215deg,
+    transparent 222deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 96%);
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 96%);
+}
+
+/* Fine film grain over everything. No LLM ever adds this; it's the single
+   cheapest "a human touched this" signal. Kept very low opacity. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 h1,
@@ -104,9 +203,9 @@ ol {
 /* Utilities */
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-8);
 }
 
 .visually-hidden {
@@ -155,14 +254,12 @@ button {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--space-2);
 }
 
 /* -- Navbar -- */
 .navbar {
   border-bottom: 1px solid var(--border-color);
-  background: rgba(11, 17, 33, 0.85);
+  background: rgba(16, 21, 15, 0.85);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -173,7 +270,28 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
+  height: 72px;
+  width: 100%;
+  padding: 0 var(--space-8);
+}
+
+/* On desktop, put the links dead center of the bar rather than flush right.
+   Brand sits in the first track, links in the middle, third track balances it. */
+@media (min-width: 769px) {
+  .nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .desktop-nav {
+    justify-self: center;
+  }
+}
+
+.brand-mark {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-color);
 }
 
 .brand {
@@ -192,14 +310,14 @@ button {
 
 .desktop-nav {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-8);
   align-items: center;
 }
 
 .nav-link {
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover,
@@ -210,11 +328,11 @@ button {
 .nav-cta {
   background: var(--surface-hover);
   border: 1px solid var(--border-color);
-  padding: var(--space-1) var(--space-3);
+  padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
   color: var(--text-primary);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   transition: all var(--transition-fast);
 }
 
@@ -352,14 +470,71 @@ button {
 /* -- Project Cards -- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--space-6);
+}
+
+.tier-section {
+  margin-top: var(--space-12);
+}
+
+.tier-section-head h2 {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-1);
+}
+
+.tier-section-blurb {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+}
+
+/* Labs collapse by default: the layout signals "practice" without any label. */
+.labs-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-8);
+}
+
+.labs-section summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-2) 0;
+}
+
+.labs-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.labs-section summary::before {
+  content: '▸';
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.labs-section[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.labs-summary-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.labs-summary-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .project-card {
   background: var(--surface-color);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
@@ -370,6 +545,91 @@ button {
   border-color: var(--accent-color);
   background: var(--surface-hover);
   box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+/* Ambient brass spotlight that follows the cursor across the panel. The
+   --spot-x / --spot-y vars are set per-card in ProjectCard on mouse move.
+   Soft and off-center, not a hard circle. Gated on reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    background: radial-gradient(
+      520px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.03),
+      transparent 80%
+    );
+  }
+
+  .project-card:hover::after {
+    opacity: 1;
+  }
+
+  .project-card.is-feature::after {
+    background: radial-gradient(
+      760px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+      rgba(200, 160, 44, 0.035),
+      transparent 82%
+    );
+  }
+}
+
+.project-card-media {
+  margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) var(--space-5);
+  border-radius: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--surface-hover);
+}
+
+/* Panoramic captures (waveforms, wide charts) get a two-column banner instead
+   of being cropped into a square. Breaks up the uniform grid on purpose. */
+@media (min-width: 800px) {
+  .projects-grid {
+    grid-auto-flow: dense;
+  }
+
+  .project-card.is-wide {
+    grid-column: span 2;
+  }
+
+  .project-card.is-wide .project-card-media {
+    aspect-ratio: 4 / 1;
+  }
+
+  /* Feature card: a 2x2 hero block. Image fills the whole tall area. */
+  .project-card.is-feature {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .project-card.is-feature .project-card-media {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 380px;
+  }
+
+  .project-card.is-feature .project-title {
+    font-size: 1.6rem;
+  }
+}
+
+.project-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-card-media img {
+  transform: scale(1.04);
 }
 
 .project-card-header {
@@ -405,6 +665,53 @@ button {
   background: rgba(255, 255, 255, 0.05);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-full);
+}
+
+/* Row of signal chips above the title: tier (always) + optional depth + status. */
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  position: relative;
+  z-index: 3;
+}
+
+.tier-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+}
+
+.tier-real-world {
+  color: var(--accent-color);
+  background: rgba(200, 160, 44, 0.1);
+  border-color: rgba(200, 160, 44, 0.35);
+}
+
+.tier-build {
+  color: #a7b98a;
+  background: rgba(122, 154, 91, 0.12);
+  border-color: rgba(122, 154, 91, 0.35);
+}
+
+.tier-lab {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-color);
+}
+
+.depth-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
 }
 
 .project-oneliner {
@@ -537,22 +844,22 @@ button {
 
 /* AI Enhanced Tag Styles */
 .tag.ai-enhanced-tag {
-  color: #e5c07b;
-  border-color: rgba(210, 153, 34, 0.4);
-  background: rgba(210, 153, 34, 0.1);
+  color: #cf7d4a;
+  border-color: rgba(207, 125, 74, 0.4);
+  background: rgba(207, 125, 74, 0.1);
 }
 
 .filter-btn.ai-enhanced-tag {
-  color: #e5c07b;
-  border-color: rgba(210, 153, 34, 0.4);
+  color: #cf7d4a;
+  border-color: rgba(207, 125, 74, 0.4);
 }
 
 .filter-btn.ai-enhanced-tag:hover,
 .filter-btn.ai-enhanced-tag.active {
-  background: rgba(210, 153, 34, 0.15);
-  border-color: #e5c07b;
-  color: #e5c07b;
-  box-shadow: 0 4px 12px rgba(210, 153, 34, 0.15);
+  background: rgba(207, 125, 74, 0.15);
+  border-color: #cf7d4a;
+  color: #cf7d4a;
+  box-shadow: 0 4px 12px rgba(207, 125, 74, 0.15);
 }
 
 .page-header {
@@ -800,9 +1107,9 @@ button {
 }
 
 .alert-box.warning {
-  background: rgba(210, 153, 34, 0.1);
-  border: 1px solid rgba(210, 153, 34, 0.4);
-  color: #e5c07b;
+  background: rgba(207, 125, 74, 0.1);
+  border: 1px solid rgba(207, 125, 74, 0.4);
+  color: #cf7d4a;
 }
 
 .alert-icon {
@@ -1003,8 +1310,8 @@ button {
 }
 
 .form-success {
-  background: rgba(77, 171, 207, 0.1);
-  border: 1px solid rgba(77, 171, 207, 0.3);
+  background: rgba(122, 154, 91, 0.1);
+  border: 1px solid rgba(122, 154, 91, 0.3);
   padding: var(--space-6);
   border-radius: var(--radius-md);
   text-align: center;
@@ -1018,7 +1325,7 @@ button {
 /* -- Tools Page -- */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--space-6);
 }
 
@@ -1059,7 +1366,7 @@ button {
 .tool-badge {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  background: rgba(11, 17, 33, 0.5);
+  background: rgba(11, 15, 10, 0.5);
   border: 1px solid var(--border-color);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
@@ -1191,7 +1498,7 @@ button {
 }
 
 .markdown-body pre {
-  background: #0a0f1a;
+  background: #0b0f0a;
   border: 1px solid var(--border-color);
   padding: var(--space-4);
   border-radius: var(--radius-md);
