@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { assetUrl } from '../data/api';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, uniformSize = false }) {
     // Track the cursor position as CSS vars so the ambient spotlight follows it.
     const handlePointer = (e) => {
         const el = e.currentTarget;
@@ -24,7 +24,7 @@ export default function ProjectCard({ project }) {
 
     return (
         <div
-            className={`project-card ${project.image ? 'has-media' : ''} ${project.wide ? 'is-wide' : ''} ${project.size === 'feature' ? 'is-feature' : ''}`}
+            className={`project-card ${project.image ? 'has-media' : ''} ${!uniformSize && project.wide ? 'is-wide' : ''} ${!uniformSize && project.size === 'feature' ? 'is-feature' : ''}`}
             onMouseMove={handlePointer}
         >
             {project.image && (

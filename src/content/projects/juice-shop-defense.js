@@ -13,7 +13,7 @@ export default {
     content: `
 ## Overview
 
-The OWASP Juice Shop is arguably the most modern and sophisticated insecure web application built for security training. While many use it to practice *attacking*, this project focused entirely on *defending* it. 
+The OWASP Juice Shop is arguably the most modern and sophisticated insecure web application built for security training. While many use it to practice attacking, this project focused entirely on defending it. 
 
 ## The Defense Architecture
 

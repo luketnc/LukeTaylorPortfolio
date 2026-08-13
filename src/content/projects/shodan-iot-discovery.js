@@ -13,7 +13,7 @@ export default {
 
 The internet is fundamentally noisy, and search engines like Google only index traditional web pages. Search engines like Shodan, however, index the underlying ports and banners of the entire IPv4 space. For this project, I wrote custom Python tooling to automate interactions with the Shodan API, specifically searching for misconfigured Internet of Things (IoT) devices and exposed industrial interfaces.
 
-## Tactical Execution
+## Execution
 
 Using the \`shodan\` Python library, I built an automated scanning script that searches for specific service banners. Rather than using the web console, interacting with the API allowed me to:
 1. Filter out honeypots programmatically.
@@ -23,6 +23,8 @@ Using the \`shodan\` Python library, I built an automated scanning script that s
 ## Findings & Realities
 
 The results of querying internet-wide telemetry are always staggering. I discovered numerous assets that should strictly exist behind VPNs or zero-trust gateways sitting cleanly on the open internet with default credentials. 
+
+I found webcams, printers, and industrial controllers to be the most common misconfigured devices that I found. I also found some devices I didnt recognise but I assume they were routers, and lots of VPNs that were misconfigured or not configured at all.
 
 ### Why This Matters for Security
 This project highlighted the importance of continuous attack surface management (ASM). Organizations often lose track of shadow IT or vendor-installed hardware. By utilizing tools like Shodan in a defensive posture, security teams can discover their own exposed infrastructure before threat actors do. 

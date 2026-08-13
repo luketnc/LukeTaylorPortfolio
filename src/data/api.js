@@ -4,8 +4,9 @@ const projectModules = import.meta.glob('../content/projects/*.js', { eager: tru
 export const projectsData = Object.values(projectModules).flatMap(mod => {
     if (!mod || !mod.default) return [];
     if (Array.isArray(mod.default)) {
-        return mod.default;
+        return mod.default.filter(p => !p.draft);
     }
+    if (mod.default.draft) return [];
     return [mod.default];
 });
 

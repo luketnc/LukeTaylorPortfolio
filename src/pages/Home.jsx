@@ -9,8 +9,8 @@ export default function Home() {
     const featuredProjects = projectsData
         .filter(p => p.featured)
         .sort((a, b) => featureRank(b) - featureRank(a))
-        // 5 tiles cleanly: the 2x2 feature (4 cells) + the wide card (2) + 3 singles = 9 = 3 full rows.
-        .slice(0, 5);
+        // 6 tiles cleanly for a uniform grid: 2 rows of 3 columns.
+        .slice(0, 6);
 
     return (
         <div className="home-page">
@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
                 <div className="projects-grid">
                     {featuredProjects.map(project => (
-                        <ProjectCard key={project.id} project={project} />
+                        <ProjectCard key={project.id} project={project} uniformSize={true} />
                     ))}
                 </div>
             </section >
