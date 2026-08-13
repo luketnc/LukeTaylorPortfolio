@@ -14,23 +14,27 @@ export default {
     size: "feature",
     content: `
 ## Overview
-This project involved the design and physical prototyping of a stealthy rogue Wi-Fi access point (AP) and micro-Command and Control (C2) node. Utilizing an ESP32 microcontroller concealed inside a small porcupine statue, the device serves as a physical red-teaming dropbox. By leveraging Evil Twin and rogue AP concepts (inspired by the MANA toolkit), the "porcupine" broadcasts a target SSID and forces connecting clients into a custom "Gnome Trap" captive portal. To merge offensive network capabilities with a physical hardware aesthetic, the statue was wired with pulsing LED eyes to indicate system status.
+This project involved the design and physical prototyping of a funny rogue Wi-Fi access point (AP) and micro-Command and Control (C2) node. It kind of has the apperence of a Call of Duty Zombies Monkey bomb, which I love. Utilizing an ESP32 microcontroller concealed inside a small porcupine statue, the device serves as a physical red-teaming dropbox. By leveraging Evil Twin and rogue AP concepts (inspired by the MANA toolkit), the "porcupine" broadcasts a target SSID and forces connecting clients into a custom "Gnome Trap" captive portal. To merge offensive network capabilities with a physical hardware aesthetic, the statue was wired with pulsing LED eyes to indicate system status.
 
 <img src="/images/spike_rogueAP/IMG_0521.jpg" alt="ESP32 rogue AP concealed inside the porcupine statue" style="width: 100%; border-radius: 8px;" />
 
 ## Results
-Stealth Hardware Enclosure: Successfully embedded offensive network infrastructure inside an inconspicuous physical object, proving the viability of low-cost drop devices for physical penetration testing and social engineering labs.
+Successfully embedded offensive network infrastructure inside an inconspicuous physical object, proving the viability of low-cost drop devices for physical penetration testing and social engineering labs.
 
-Micro-Captive Portal Deployment: Engineered a custom captive portal hosted entirely on the ESP32's flash memory. The portal actively intercepts client web traffic and serves custom HTML payloads to test credential harvesting and HTTP redirection flows.
+Engineered a custom captive portal hosted entirely on the ESP32's flash memory. The portal actively intercepts client web traffic and serves custom HTML payloads to test credential harvesting and HTTP redirection flows.
 
-Visual Hardware Feedback: Integrated and programmed pulsing LED eyes into the porcupine's face, providing a real-time, screenless indicator of AP status and successful client connections.
+Integrated and programmed pulsing LED eyes into the porcupine's face, providing a real-time, screenless indicator of AP status and successful client connections.
 
-Standalone Rogue Infrastructure: Demonstrated that a low-voltage microcontroller can independently handle SSID broadcasting, DHCP assignment, and DNS hijacking without needing a full Linux OS or external power brick.
+Demonstrated that a low-voltage microcontroller can independently handle SSID broadcasting, DHCP assignment, and DNS hijacking without needing a full Linux OS or external power brick.
 
 ## Lessons
 DNS Spoofing is Mandatory: For modern Android and iOS devices to automatically trigger their captive portal pop-up screens, the network must intercept and hijack all DNS requests. Configuring the ESP32's internal DNS server to forcefully resolve all traffic back to its own IP is the most critical step in a rogue AP setup.
 
-Hardware Limitations: While the ESP32 is a powerhouse for IoT, its Wi-Fi stack and memory are constrained. It requires highly optimized code to handle simultaneous AP broadcasting, DNS spoofing, and web-serving without crashing when multiple clients connect.
+## Hardware Limitations 
+While the 2 NRF-24 Antennas look really funny sticking out of the porcupine, they dont actually add any range or functionality to the device- in THIS configuratiopn. They work for other firmwares I have toyed with that use them in ConstCarrier mode in a controlled enviornment. 
+
+While the ESP32 is a powerhouse for IoT, its Wi-Fi stack and memory are constrained. It requires highly optimized code to handle simultaneous AP broadcasting, DNS spoofing, and web-serving without crashing when multiple clients connect.
+
 
 Physical Concealment Challenges: Embedding active microcontrollers and LEDs into a small, enclosed statue requires careful consideration of heat dissipation and battery placement to ensure the device remains operational and undetectable in a physical environment.
     `,
