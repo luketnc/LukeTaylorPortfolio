@@ -28,7 +28,7 @@ You can view the raw proof file here: [pgp-proof.txt](/pgp-proof.txt)
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-I control https://nullgarden.com and https://nullgarden.blog
+I control https://shelter.com and https://shelter.blog
 PGP Fingerprint: 0C42 067F E279 1AF7 9D14  9149 87B2 0315 23F3 3C8E
 Issued: 2026-03-11
 -----BEGIN PGP SIGNATURE-----
