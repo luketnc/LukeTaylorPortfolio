@@ -6,7 +6,7 @@ export default {
     category: "Security Tooling",
     tags: ["IoT", "ESP-32", "Rogue AP", "Offensive Security", "MANA"],
     status: "Completed",
-    featured: true,
+    featured: false,
     tier: "build",
     image: "/images/spike_rogueAP/IMG_0521.jpg",
     imageAlt: "ESP32 rogue access point concealed inside a porcupine statue with wires and glowing red LED eyes",
