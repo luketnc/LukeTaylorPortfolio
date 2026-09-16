@@ -34,9 +34,8 @@ export default {
     - A place for my DFIR and malware detonnation activities
     - An Active OSINT Scraper that pulls from telegrams, DISCORD, twitter, and VK
     
-
-    
-
+    ## Design fundementals
+    After figuring out what services I wanted teh next logical step was to think about the logical design of the homelab. because my services vary signifigantly in terms of thier computational requriemebts as well as their purpose. For that reason I opted to run 
 
 
 
