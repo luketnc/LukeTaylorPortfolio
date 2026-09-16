@@ -24,7 +24,8 @@ export default function Home() {
                         Security Analyst & Researcher
                     </p>
                     <p>
-                        Hey, I'm Luke. This is where I put the security stuff I actually build. Hardware, wireless, reverse engineering, whatever's caught my attention lately. Some of it's client work, some is just rabbit holes I've jumped down trying to widen my scope.
+                        Hey, I'm Luke. This is where I put the IT/security projects I work on. I mostly like to do networking and offensive/defensive security work but I have a little bit of everything across the IT/OT/IoT space.
+
                     </p>
                 </div>
             </section >
