@@ -12,7 +12,7 @@ export default function Contact() {
                 <div className="contact-info" style={{ marginBottom: '3rem' }}>
                     <h2>Get in Touch</h2>
                     <p className="contact-desc">
-                        I'm a recent cybersecurity grad looking for roles in security analysis, red teaming, and security engineering. I'm also always down to talk shop, review labs, or collaborate on open-source tooling.
+                        I'm a recent cybersecurity grad looking for roles in IT, Networking, and Security Analysis.
                     </p>
                     <div className="social-links">
                         <a href="mailto:luketnc@gmail.com" className="social-link">
