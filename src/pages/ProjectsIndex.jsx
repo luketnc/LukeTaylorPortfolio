@@ -28,7 +28,7 @@ export default function ProjectsIndex() {
         <div className="projects-page container section-padding">
             <header className="page-header">
                 <h1>Projects & Labs</h1>
-                <p className="page-subtitle">A collection of tools built, labs completed, and systems broken.</p>
+                <p className="page-subtitle">A collection of some of the labs, PoC tools, and other projects I have worked on recently (ish in some cases). </p>
             </header>
 
             <Section
