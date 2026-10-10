@@ -17,19 +17,17 @@ I built a mobile interception rig on a jailbroken iPhone 7. The phone routes all
 
 The rig works. The writeup is on hold because the hard part turned out not to be technical. Finding apps with real disclosure programs is harder than building the thing, and I am not pointing this at anything out of scope just because I can. Once I have targets inside a bug bounty or a published security.txt, the full piece goes up with actual findings in it.
 
-One lesson is worth writing down now, because it had nothing to do with Burp.
 
-## What your network path says about you
+## Issues...
 
-Getting this rig online without tripping platform anti-abuse taught me more about detection than the interception did. Where your traffic originates is not a neutral detail. It is a signal, and each option tells a defender a completely different story:
+Getting this rig online without tripping certain platform anti-abuse systems taught me a lot about the systems put in place to defend against the type of testing I was doing.
 
-- **Data center ranges** read as automation. Known bulk allocations with no residential history, so most anti-abuse systems treat them as bot traffic by default.
-- **A VPS** reads as threat infrastructure. A lone cloud host reaching out is exactly the shape an analyst is trained to pull the thread on.
-- **Residential addresses** read as a person, which is precisely why that space is valuable and precisely why it deserves scrutiny.
+Believe it or not, Apple doesn't love the idea of people jailbreaking their iPhones and routing through Burp Suite to intercept traffic. Some of the ways they prevent this kind of behavior is implicitly distrusting data center/VPN IPs (understandable), enforcing pretty harsh geofencing measures, and requiring very frequent MFA reverification to prevent someone from buying a 15-cent temp number and using it for verification. Of course there are ways around this (Residential Proxies, Pay-Go SIMs, longer number leases etc) but at some point I had to question why I was doing all of that. My plan wasn't to hack a bunch of old apps on the store and get in trouble, I really just wanted to explore using mobile devices as a proxy and look at how mobile app APIs are designed and learn more about cert pinning and dumping/reversing binaries. 
 
-That last one is the part I would not have gotten from reading about it. Residential proxy pools are frequently assembled from consumer devices whose owners never meaningfully agreed to it, sometimes through malware and sometimes through an SDK bundled into a free app. Understanding how that supply chain actually works changed how I think about the whole category, and it is part of why this project is sitting paused rather than finished.
+## Circling Back Around
 
-The takeaway I keep coming back to: interception was the easy half. The operational side, and the ethics of the infrastructure you lean on to get there, is where the real education was.
+Because of these issues I figured my time would be better spent grabbing an app, sideloading it on my jailbroken iPhone, and analyzing it from there. Sure I lose some of the cert pinning and routing intricacies but it would give me a better project and prep me to eventually try my hand at some mobile bug bounties. That's where this sits right now, I still learned a lot and it was fun to read up on the checkm8 exploit but the real meat of this project is yet to come.
+
     `,
     overview: "A mobile traffic interception setup using a checkm8-jailbroken iPhone 7 proxied through Burp Suite.",
     goal: "Build a real-device mobile testing rig for authorized app security testing, rather than relying on an emulator.",
